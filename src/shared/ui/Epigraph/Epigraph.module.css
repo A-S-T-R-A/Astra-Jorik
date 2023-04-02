@@ -3,9 +3,13 @@
     font-size: var(--font-size-small);
     color: var(--color-dark-gray);
     font-weight: 700;
+    display: flex;
+    align-items: center;
 }
 
 .line {
-    width: 20px;
-    background: #000;
+    margin-left: 15px;
+    width: 60px;
+    height: 2px;
+    background: var(--color-dark-gray);
 }
