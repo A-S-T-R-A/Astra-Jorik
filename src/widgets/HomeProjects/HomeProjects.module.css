@@ -1,0 +1,74 @@
+.wrapper {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-areas:
+        ". title ."
+        "projects projects projects"
+        ". link .";
+    row-gap: 30px;
+}
+
+.title {
+    grid-area: title;
+}
+
+.link {
+    grid-area: link;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+@media(min-width: 740px) {
+    .wrapper {
+        grid-template-columns: 1fr 600px 600px 1fr;
+        grid-template-areas:
+            ". title link . "
+            "projects projects projects projects";
+    }
+
+    .link {
+        justify-self: end;
+    }
+}
+
+.moreProjects {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.moreProjectsText {
+    text-transform: uppercase;
+}
+
+.arrowRight {
+    background: var(--color-dark-gray);
+    height: 2px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.arrowRight:before,
+.arrowRight:after {
+    content: "";
+    background: var(--color-dark-gray);
+    position: absolute;
+    height: 1.5px;
+    width: 10px;
+}
+
+.arrowRight:before {
+    right: -2px;
+    bottom: -3px;
+    transform: rotate(-45deg);
+}
+
+.arrowRight:after {
+    right: -2px;
+    top: -3px;
+    transform: rotate(45deg);
+}

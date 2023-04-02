@@ -1,4 +1,4 @@
-import { Section } from "shared/ui/Section/Section"
+import { HomeProjects } from "widgets/HomeProjects"
 import { PageTitle } from "widgets/PageTitle"
 import { Hero } from "widgets/Hero"
 import { navigationData } from "../model"
@@ -13,6 +13,7 @@ export function Home(props: HomeProps) {
         <div>
             <PageTitle title={text.pageTitle} navigation={navigationData} />
             <Hero />
+            <HomeProjects />
         </div>
     )
 }
