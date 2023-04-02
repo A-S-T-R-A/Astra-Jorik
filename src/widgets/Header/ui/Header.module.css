@@ -1,0 +1,16 @@
+.wrapper {
+    background-color: gray;
+    width: 100%;
+    min-height: 80px;
+}
+
+.container {
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.contact {
+    display: none;
+}
