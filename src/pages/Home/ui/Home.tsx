@@ -1,3 +1,4 @@
+import { Epigraph } from "shared/ui/Epigraph/Epigraph"
 import { Section } from "shared/ui/Section/Section"
 
 interface HomeProps {
@@ -5,5 +6,9 @@ interface HomeProps {
 }
 
 export function Home(props: HomeProps) {
-    return <>Home</>
+    return (
+        <>
+            <Epigraph>About us</Epigraph>
+        </>
+    )
 }
