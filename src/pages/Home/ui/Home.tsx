@@ -1,7 +1,8 @@
 import { Section } from "shared/ui/Section/Section"
 import { PageTitle } from "widgets/PageTitle"
 import { navigationData } from "../model"
-import { homeText } from "shared/constants/home/text"
+import { text } from "shared/constants/home"
+import { Hero } from "widgets/Hero/Hero"
 
 interface HomeProps {
     path: string
@@ -10,7 +11,8 @@ interface HomeProps {
 export function Home(props: HomeProps) {
     return (
         <div>
-            <PageTitle title={homeText.pageTitle} navigation={navigationData} />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <Hero />
         </div>
     )
 }
