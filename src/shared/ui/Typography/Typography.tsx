@@ -17,6 +17,7 @@ export enum TypographyVariant {
     H3 = "variantH3",
     H4 = "variantH4",
     P = "variantP",
+    SMALL = "variantSmall",
 }
 
 interface TextProps extends HTMLAttributes<HTMLDivElement> {

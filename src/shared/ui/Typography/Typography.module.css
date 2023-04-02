@@ -23,11 +23,17 @@
     color: var(--color-base);
 }
 
+.variantSmall {
+    font-size: var(--font-size-small);
+    color: var(--color-base);
+}
+
 .base.variantH1,
 .base.variantH2,
 .base.variantH3,
 .base.variantH4,
-.base.variantP {
+.base.variantP,
+.base.variantSmall {
     color: var(--color-base);
 }
 
@@ -35,7 +41,8 @@
 .darkGray.variantH2,
 .darkGray.variantH3,
 .darkGray.variantH4,
-.darkGray.variantP {
+.darkGray.variantP,
+.darkGray.variantSmall {
     color: var(--color-dark-gray);
 }
 
@@ -43,7 +50,8 @@
 .lightGray.variantH2,
 .lightGray.variantH3,
 .lightGray.variantH4,
-.lightGray.variantP {
+.lightGray.variantP,
+.lightGray.variantSmall {
     color: var(--color-light-gray);
 }
 
@@ -51,7 +59,8 @@
 .inverted.variantH2,
 .inverted.variantH3,
 .inverted.variantH4,
-.inverted.variantP {
+.inverted.variantP,
+.inverted.variantSmall {
     color: var(--color-white);
 }
 
@@ -59,7 +68,8 @@
 .accent.variantH2,
 .accent.variantH3,
 .accent.variantH4,
-.accent.variantP {
+.accent.variantP,
+.accent.variantSmall {
     color: var(--color-accent);
 }
 
@@ -67,6 +77,7 @@
 .bold.variantH2,
 .bold.variantH3,
 .bold.variantH4,
-.bold.variantP {
+.bold.variantP,
+.bold.variantSmall {
     font-weight: 700;
 }
