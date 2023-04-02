@@ -1,0 +1,64 @@
+.variantH1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-base);
+}
+
+.variantH2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-base);
+}
+
+.variantH3 {
+    font-size: var(--font-size-h3);
+    color: var(--color-base);
+}
+
+.variantH4 {
+    font-size: var(--font-size-h4);
+    color: var(--color-base);
+}
+
+.variantP {
+    font-size: var(--font-size-base);
+    color: var(--color-base);
+}
+
+.base.variantH1,
+.base.variantH2,
+.base.variantH3,
+.base.variantH4,
+.base.variantP {
+    color: var(--color-base);
+}
+
+.darkGray.variantH1,
+.darkGray.variantH2,
+.darkGray.variantH3,
+.darkGray.variantH4,
+.darkGray.variantP {
+    color: var(--color-dark-gray);
+}
+
+.inverted.variantH1,
+.inverted.variantH2,
+.inverted.variantH3,
+.inverted.variantH4,
+.inverted.variantP {
+    color: var(--color-white);
+}
+
+.accent.variantH1,
+.accent.variantH2,
+.accent.variantH3,
+.accent.variantH4,
+.accent.variantP {
+    color: var(--color-accent);
+}
+
+.bold.variantH1,
+.bold.variantH2,
+.bold.variantH3,
+.bold.variantH4,
+.bold.variantP {
+    font-weight: 700;
+}
