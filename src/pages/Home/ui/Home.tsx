@@ -5,9 +5,5 @@ interface HomeProps {
 }
 
 export function Home(props: HomeProps) {
-    return (
-        <>
-            <Section>s</Section>
-        </>
-    )
+    return <>Home</>
 }
