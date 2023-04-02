@@ -4,13 +4,13 @@ import { classNames } from "shared/lib/classNames"
 
 interface SectionProps {
     children: ComponentChildren
-    className?: string
+    containerClassName?: string
 }
 
-export function Section({ children, className }: SectionProps) {
+export function Section({ children, containerClassName }: SectionProps) {
     return (
-        <div className={classNames(styles.wrapper, {}, [className])}>
-            <div className={styles.container}>{children}</div>
+        <div className={styles.wrapper}>
+            <div className={classNames(styles.container, {}, [containerClassName])}>{children}</div>
         </div>
     )
 }
