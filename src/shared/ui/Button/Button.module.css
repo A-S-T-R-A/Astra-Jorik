@@ -1,0 +1,23 @@
+.button {
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    border-radius: 5px;
+    border: 2px solid var(--color-accent);
+    height: 40px;
+    padding: 0 40px;
+}
+
+.filled {
+    background: var(--color-accent);
+    color: var(--color-white)
+}
+
+.outlined {
+    color: var(--color-accent);
+    background: none
+}
+
+.clear {
+    height: auto;
+    padding: 0;
+}
