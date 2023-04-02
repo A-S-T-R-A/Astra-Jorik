@@ -1,6 +1,7 @@
 .button {
     cursor: pointer;
     font-size: var(--font-size-base);
+    font-weight: 500;
     border-radius: 5px;
     border: 2px solid var(--color-accent);
     height: 40px;
@@ -12,12 +13,29 @@
     color: var(--color-white)
 }
 
+.filled:hover {
+    background: var(--color-accent);
+    filter: brightness(90%);
+}
+
 .outlined {
     color: var(--color-accent);
-    background: none
+    background: transparent;
+}
+
+.outlined:hover {
+    color: var(--color-white);
+    background: var(--color-accent);
 }
 
 .clear {
     height: auto;
     padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-base);
+}
+
+.clear:hover {
+    color: var(--color-accent);
 }

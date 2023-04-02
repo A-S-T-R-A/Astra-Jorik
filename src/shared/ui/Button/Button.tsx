@@ -5,20 +5,24 @@ import { classNames } from "shared/lib/classNames"
 
 export enum ButtonVariant {
     FILLED = "filled",
-    OUTLINED = "outlines",
+    OUTLINED = "outlined",
     CLEAR = "clear",
 }
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     className?: string
     children: ComponentChildren
-    variant: ButtonVariant
+    variant?: ButtonVariant
 }
 
 export function Button(props: ButtonProps) {
-    const { children, className, variant } = props
+    const { children, className, variant = ButtonVariant.FILLED, ...restProps } = props
 
     const btnClassName = classNames(styles.button, {}, [className, styles[variant]])
 
-    return <button className={btnClassName}>{children}</button>
+    return (
+        <button className={btnClassName} {...restProps}>
+            {children}
+        </button>
+    )
 }
