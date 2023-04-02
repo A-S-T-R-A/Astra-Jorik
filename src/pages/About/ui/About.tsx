@@ -1,6 +1,6 @@
 import { PageTitle } from "widgets/PageTitle"
 import { navigationData } from "../model"
-import { aboutText } from "shared/constants/about/text"
+import { text } from "shared/constants/about"
 
 interface AboutProps {
     path: string
@@ -9,7 +9,7 @@ interface AboutProps {
 export function About(props: AboutProps) {
     return (
         <>
-            <PageTitle title={aboutText.pageTitle} navigation={navigationData} />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
         </>
     )
 }
