@@ -1,8 +1,8 @@
 import { Section } from "shared/ui/Section/Section"
 import { PageTitle } from "widgets/PageTitle"
+import { Hero } from "widgets/Hero"
 import { navigationData } from "../model"
 import { text } from "shared/constants/home"
-import { Hero } from "widgets/Hero/Hero"
 
 interface HomeProps {
     path: string
