@@ -5,7 +5,7 @@ import { Home } from "pages/Home"
 import { About } from "pages/About"
 import { Projects } from "pages/Projects"
 import { NotFound } from "pages/NotFound"
-import { ProjectDetails } from "pages/ProjectDetails/ui/ProjectDetails"
+import { ProjectDetails } from "pages/ProjectDetails"
 
 export function App() {
     return (
