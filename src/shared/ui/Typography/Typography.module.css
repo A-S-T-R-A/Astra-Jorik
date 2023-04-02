@@ -39,6 +39,14 @@
     color: var(--color-dark-gray);
 }
 
+.lightGray.variantH1,
+.lightGray.variantH2,
+.lightGray.variantH3,
+.lightGray.variantH4,
+.lightGray.variantP {
+    color: var(--color-light-gray);
+}
+
 .inverted.variantH1,
 .inverted.variantH2,
 .inverted.variantH3,

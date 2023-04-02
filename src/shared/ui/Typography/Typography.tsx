@@ -6,6 +6,7 @@ import styles from "./Typography.module.css"
 export enum TypographyColor {
     BASE = "base",
     DARK_GRAY = "darkGray",
+    LIGHT_GRAY = "lightGray",
     INVERTED = "inverted",
     ACCENT = "accent",
 }
