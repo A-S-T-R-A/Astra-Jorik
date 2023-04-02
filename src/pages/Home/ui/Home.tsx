@@ -1,6 +1,7 @@
 import { Section } from "shared/ui/Section/Section"
 import { PageTitle } from "widgets/PageTitle"
 import { navigationData } from "../model"
+import { homeText } from "shared/constants/home/text"
 
 interface HomeProps {
     path: string
@@ -9,10 +10,7 @@ interface HomeProps {
 export function Home(props: HomeProps) {
     return (
         <div>
-            <PageTitle
-                title="Dreams come true with our talented architects"
-                navigation={navigationData}
-            />
+            <PageTitle title={homeText.pageTitle} navigation={navigationData} />
         </div>
     )
 }
