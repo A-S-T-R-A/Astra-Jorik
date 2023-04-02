@@ -1,3 +1,5 @@
+import { Section } from "shared/ui/Section/Section"
+
 interface HomeProps {
     path: string
 }
