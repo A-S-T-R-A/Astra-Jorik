@@ -1,6 +1,7 @@
 .wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 20px;
     grid-template-areas: "titleContact" "contact" "titleForm" "form";
 }
 
@@ -10,6 +11,7 @@
 
 .contact {
     grid-area: contact;
+    margin: 0 auto;
 }
 
 .titleForm {
