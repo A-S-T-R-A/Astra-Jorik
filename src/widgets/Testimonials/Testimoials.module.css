@@ -1,0 +1,52 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+}
+
+.wrapper {
+    position: relative;
+    height: 420px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.img {
+    object-fit: cover;
+    filter: brightness(22%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.epigrpah {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-20%) translateY(-50%) rotate(270deg);
+    color: var(--color-white);
+}
+
+.epigrpah>div {
+    background-color: var(--color-white);
+}
+
+/* .swiper {
+    height: 300px !important;
+    position: relative;
+    z-index: 10 !important;
+} */
+
+/* .slide {
+    height: 300px !important;
+    position: relative;
+    z-index: 10 !important;
+} */
