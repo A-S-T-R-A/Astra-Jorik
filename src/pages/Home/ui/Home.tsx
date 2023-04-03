@@ -6,6 +6,7 @@ import { ContactUs } from "widgets/ContactUs"
 import { navigationData } from "../model"
 import { text } from "shared/constants/home"
 import { Services } from "widgets/Services"
+import { About } from "widgets/About"
 
 interface HomeProps {
     path: string
@@ -16,6 +17,7 @@ export function Home(props: HomeProps) {
         <div>
             <PageTitle title={text.pageTitle} navigation={navigationData} />
             <Hero />
+            <About />
             <Services />
             <HomeProjects />
             <Testimoials />
