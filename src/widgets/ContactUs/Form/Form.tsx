@@ -1,6 +1,5 @@
 import { useRef, useState } from "preact/hooks"
 import emailjs from "@emailjs/browser"
-import styles from "./Form.module.css"
 import { classNames } from "shared/lib/classNames"
 import { FormUi } from "./FormUi/FormUi"
 import { FormLoading } from "./FormLoading/FormLoading"
@@ -84,7 +83,7 @@ export function Form({ className }: FormProps) {
     }
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <div className={classNames("", {}, [className])}>
             {showForm ? (
                 <FormUi
                     submitHandler={submitHandler}
