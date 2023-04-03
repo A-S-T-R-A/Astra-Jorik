@@ -1,0 +1,38 @@
+.moreProjects {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.moreProjectsText {
+    text-transform: uppercase;
+}
+
+.arrowRight {
+    background: var(--color-dark-gray);
+    height: 2px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.arrowRight:before,
+.arrowRight:after {
+    content: "";
+    background: var(--color-dark-gray);
+    position: absolute;
+    height: 1.5px;
+    width: 10px;
+}
+
+.arrowRight:before {
+    right: -2px;
+    bottom: -3px;
+    transform: rotate(-45deg);
+}
+
+.arrowRight:after {
+    right: -2px;
+    top: -3px;
+    transform: rotate(45deg);
+}
