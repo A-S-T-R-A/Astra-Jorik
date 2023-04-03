@@ -13,6 +13,16 @@ export function Home(props: HomeProps) {
         <div>
             <PageTitle title={text.pageTitle} navigation={navigationData} />
             <Hero />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <Hero />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <Hero />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <Hero />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <Hero />
+            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <Hero />
         </div>
     )
 }

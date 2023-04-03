@@ -28,25 +28,26 @@ export function BurgerNav({ isOpen, closeBurger }: BurgerNavProps) {
     }
 
     return (
-        <div className={`${styles.overlay} ${isOpen ? styles.navOpen : ""}`}>
-            <div className={styles.wrapper} onClick={menuClickHandler}>
-                <div className={styles.container} style={{ height: `${height}px` }}>
-                    <ul className={styles.list}>
-                        {linksData.map(item => {
-                            return (
-                                <AppLink
-                                    className={styles.link}
-                                    key={item.id}
-                                    to={item.link}
-                                    closeBurger={closeBurger}
-                                >
-                                    {item.text}
-                                </AppLink>
-                            )
-                        })}
-                    </ul>
-                    <Contacts />
-                </div>
+        <div
+            className={`${styles.wrapper} ${isOpen ? styles.navOpen : ""}`}
+            onClick={menuClickHandler}
+        >
+            <div className={styles.container} style={{ height: `${height}px` }}>
+                <ul className={styles.list}>
+                    {linksData.map(item => {
+                        return (
+                            <AppLink
+                                className={styles.link}
+                                key={item.id}
+                                to={item.link}
+                                closeBurger={closeBurger}
+                            >
+                                {item.text}
+                            </AppLink>
+                        )
+                    })}
+                </ul>
+                <Contacts />
             </div>
         </div>
     )
