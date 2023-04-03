@@ -13,7 +13,7 @@
     "preact": "^10.13.0",
     "preact-router": "^4.1.0",
     "react": "npm:@preact/compat@^17.1.2",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
     "swiper": "^9.2.0"
   },
   "devDependencies": {
