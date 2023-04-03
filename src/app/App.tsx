@@ -11,13 +11,15 @@ export function App() {
     return (
         <div>
             <Header />
-            <Router>
-                <Home path="/" />
-                <About path="/about" />
-                <Projects path="/projects" />
-                <ProjectDetails path="/projects/1" />
-                <NotFound default />
-            </Router>
+            <div className="page-wrapper">
+                <Router>
+                    <Home path="/" />
+                    <About path="/about" />
+                    <Projects path="/projects" />
+                    <ProjectDetails path="/projects/1" />
+                    <NotFound default />
+                </Router>
+            </div>
         </div>
     )
 }

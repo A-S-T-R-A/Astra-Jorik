@@ -72,3 +72,7 @@ a:active {
     --color-modal-overlay: rgba(12 31 49 / 49%);
     --color-error: #f82929;
 }
+
+.page-wrapper {
+    padding-top: var(--navbar-height);
+}
