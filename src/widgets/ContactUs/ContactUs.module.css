@@ -1,0 +1,34 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    grid-template-areas: "titleContact" "contact" "titleForm" "form";
+}
+
+.titleContact {
+    grid-area: titleContact;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.contact {
+    grid-area: contact;
+    margin-bottom: 20px;
+}
+
+.titleForm {
+    grid-area: titleForm;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.form {
+    grid-area: form;
+}
+
+@media (min-width:1081px) {
+    .wrapper {
+        grid-template-columns: auto auto;
+        grid-template-areas: "titleContact contact" "titleForm form";
+    }
+}
