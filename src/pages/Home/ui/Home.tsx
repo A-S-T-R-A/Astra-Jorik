@@ -5,9 +5,7 @@ import { Testimoials } from "widgets/Testimonials"
 import { ContactUs } from "widgets/ContactUs"
 import { navigationData } from "../model"
 import { text } from "shared/constants/home"
-import { Testimoials } from "widgets/Testimonials"
 import { About } from "widgets/About"
-
 
 interface HomeProps {
     path: string
