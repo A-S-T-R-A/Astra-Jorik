@@ -1,5 +1,6 @@
 import { PageTitle } from "widgets/PageTitle"
 import { navigationData } from "../model"
+import { AllProjects } from "widgets/AllProjects"
 
 interface ProjectsPageProps {
     path: string
@@ -12,6 +13,7 @@ export function ProjectsPage(props: ProjectsPageProps) {
                 title="Dreams come true with our talented architects"
                 navigation={navigationData}
             />
+            <AllProjects />
         </div>
     )
 }
