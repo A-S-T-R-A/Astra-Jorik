@@ -7,7 +7,8 @@
 
 .titleContact {
     grid-area: titleContact;
-    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .contact {
@@ -17,8 +18,17 @@
 
 .titleForm {
     grid-area: titleForm;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .form {
     grid-area: form;
+}
+
+@media (min-width:1081px) {
+    .wrapper {
+        grid-template-columns: auto auto;
+        grid-template-areas: "titleContact contact" "titleForm form";
+    }
 }

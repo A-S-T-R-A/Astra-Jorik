@@ -28,7 +28,7 @@ function ListItem({ data, className }: any) {
         <div className={containerClassName}>
             {!!Icon && Icon}
             <div className={styles.itemInfoContainer}>
-                <Typography variant={TypographyVariant.H3} className={styles.itemTitle}>
+                <Typography variant={TypographyVariant.H4} className={styles.itemTitle}>
                     {title}
                 </Typography>
                 {!!desc && (

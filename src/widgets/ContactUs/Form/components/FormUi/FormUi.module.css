@@ -6,11 +6,11 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
-    margin-top: 20px;
 }
 
 .formContainer {
     width: 100%;
+    max-width: 800px;
     display: grid;
     justify-items: center;
     margin: 0 auto;
@@ -23,7 +23,6 @@
     justify-content: center;
     grid-column-gap: 10px;
     grid-row-gap: 20px;
-
 }
 
 .inputWrap:nth-child(2) {
@@ -42,7 +41,7 @@
     border-radius: 5px;
     font-family: inherit;
     border: none;
-    border: 1px solid var(--color-base);
+    background-color: whitesmoke;
 }
 
 .textarea {
@@ -51,37 +50,36 @@
     padding-left: 10px;
     padding-top: 10px;
     border-radius: 5px;
+    border: none;
     font-family: inherit;
     height: 100%;
+    background-color: whitesmoke;
 }
 
 .btn {
+    grid-area: button;
+    justify-self: start;
     width: 100%;
     border-radius: 5px;
     font-weight: 700;
-    max-width: 400px;
     height: 45px !important;
 }
 
 .inputWrap {
     width: 100%;
-    max-width: 500px;
     display: flex;
     justify-content: center;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
 }
 
 .textareaWrap {
     width: 100%;
-    max-width: 500px;
     min-height: 100px;
     display: flex;
     justify-content: center;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
     grid-area: textarea;
 }
 
@@ -97,4 +95,19 @@
 .inpError {
     border: 2px solid var(--color-error);
     outline: none;
+}
+
+
+@media(min-width:481px) {
+    .formContainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "input1 input2"
+            "textarea textarea"
+            "button button";
+    }
+
+    .btn {
+        max-width: 200px;
+    }
 }
