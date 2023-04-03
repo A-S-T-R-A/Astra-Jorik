@@ -18,7 +18,7 @@ export function SectionTitle(props: SectionTitleProps) {
         <div className={classNames(styles.container, {}, [className])}>
             {!!epigraph && <Epigraph className={styles.epigraph}>{epigraph}</Epigraph>}
             <Typography
-                variant={TypographyVariant.H3}
+                variant={TypographyVariant.H2}
                 isBold
                 className={styles.title}
                 color={titleColor}
