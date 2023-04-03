@@ -7,6 +7,7 @@ import { Projects } from "pages/Projects"
 import { NotFound } from "pages/NotFound"
 import { ProjectDetails } from "pages/ProjectDetails"
 import { Suspense } from "preact/compat"
+import { Footer } from "widgets/Footer"
 
 export function App() {
     return (
@@ -22,6 +23,7 @@ export function App() {
                         <NotFound default />
                     </Router>
                 </div>
+                <Footer />
             </div>
         </Suspense>
     )

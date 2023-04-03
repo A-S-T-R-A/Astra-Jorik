@@ -3,6 +3,7 @@
     background-color: transparent;
     width: 100%;
     min-height: var(--navbar-height);
+    z-index: 100;
 }
 
 .isScrolled {
