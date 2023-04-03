@@ -4,6 +4,7 @@ import { Hero } from "widgets/Hero"
 import { navigationData } from "../model"
 import { text } from "shared/constants/home"
 import { Testimoials } from "widgets/Testimonials"
+import { About } from "widgets/About"
 
 interface HomeProps {
     path: string
@@ -14,6 +15,7 @@ export function Home(props: HomeProps) {
         <div>
             <PageTitle title={text.pageTitle} navigation={navigationData} />
             <Hero />
+            <About />
             <HomeProjects />
             <Testimoials />
             <PageTitle title={text.pageTitle} navigation={navigationData} />
