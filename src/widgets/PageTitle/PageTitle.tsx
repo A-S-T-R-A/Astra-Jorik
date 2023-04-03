@@ -34,16 +34,26 @@ interface BreadcrupmsProps {
 function Breadcrupms({ navigation }: BreadcrupmsProps) {
     const router = useRouter()
 
+    const routes = {
+        home: "/",
+        about: "/about",
+        projects: "/projects",
+        projectDetails: "/projects/1",
+        contactUs: "/contact",
+    }
+
     return (
         <div className={styles.breadcrumps}>
             {navigation.map((item, index) => {
                 const { text, link } = item
+                const isNotFoundPage = !Object.values(routes).some(item => router[0].path)
+                const isLast = index === navigation.length - 1
                 return (
                     <Fragment key={index}>
                         <Typography
                             variant={TypographyVariant.P}
                             color={
-                                router[0].path === link
+                                router[0].path === link || (isNotFoundPage && isLast)
                                     ? TypographyColor.DARK_GRAY
                                     : TypographyColor.LIGHT_GRAY
                             }
@@ -55,7 +65,7 @@ function Breadcrupms({ navigation }: BreadcrupmsProps) {
                         >
                             {text}
                         </Typography>
-                        {index !== navigation.length - 1 && (
+                        {!isLast && (
                             <Typography
                                 variant={TypographyVariant.P}
                                 color={TypographyColor.LIGHT_GRAY}

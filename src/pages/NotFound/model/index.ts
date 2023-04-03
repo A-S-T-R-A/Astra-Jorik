@@ -1,4 +1,4 @@
 export const navigationData = [
     { link: "/", text: "home" },
-    { link: "/contact", text: "contact us" },
+    { link: "/404", text: "Page not found" },
 ]
