@@ -2,11 +2,12 @@ import Router from "preact-router"
 import "./index.css"
 import { Header } from "widgets/Header"
 import { Home } from "pages/Home"
-import { About } from "pages/About"
-import { Projects } from "pages/Projects"
+import { AboutPage } from "pages/AboutPage"
+import { ProjectsPage } from "pages/ProjectsPage"
 import { NotFound } from "pages/NotFound"
 import { ProjectDetails } from "pages/ProjectDetails"
 import { Suspense } from "preact/compat"
+import { ContactUsPage } from "pages/ContactUsPage"
 
 export function App() {
     return (
@@ -16,9 +17,10 @@ export function App() {
                 <div className="page-wrapper">
                     <Router>
                         <Home path="/" />
-                        <About path="/about" />
-                        <Projects path="/projects" />
+                        <AboutPage path="/about" />
+                        <ProjectsPage path="/projects" />
                         <ProjectDetails path="/projects/1" />
+                        <ContactUsPage path="/contact" />
                         <NotFound default />
                     </Router>
                 </div>

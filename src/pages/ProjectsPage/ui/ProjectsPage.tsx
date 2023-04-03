@@ -1,11 +1,11 @@
 import { PageTitle } from "widgets/PageTitle"
 import { navigationData } from "../model"
 
-interface ProjectDetailsProps {
+interface ProjectsPageProps {
     path: string
 }
 
-export function ProjectDetails(props: ProjectDetailsProps) {
+export function ProjectsPage(props: ProjectsPageProps) {
     return (
         <div>
             <PageTitle
