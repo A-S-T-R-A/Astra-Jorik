@@ -1,0 +1,13 @@
+.wrapper {
+    padding: 30px 20px;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+/* @media (max-width: 480px) {
+    .wrapper {
+        padding-bottom: 20px;
+    }
+} */

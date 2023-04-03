@@ -1,0 +1,21 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "titleContact" "contact" "titleForm" "form";
+}
+
+.titleContact {
+    grid-area: titleContact;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.titleForm {
+    grid-area: titleForm;
+}
+
+.form {
+    grid-area: form;
+}
