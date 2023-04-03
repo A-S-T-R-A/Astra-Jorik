@@ -9,7 +9,6 @@ export function Burger() {
     function BurgerClickHandler(e: MouseEvent) {
         e.stopPropagation()
         setShowBurger(prev => !prev)
-        console.log(showBurger)
     }
 
     useEffect(() => {
@@ -22,9 +21,9 @@ export function Burger() {
     }
 
     return (
-        <div className={showBurger ? styles.wrapper : styles.displayNone} onClick={clickHandler}>
+        <div className={styles.wrapper} onClick={clickHandler}>
             <BurgerIcon onClick={BurgerClickHandler} isOpen={showBurger} />
-            {/* <BurgerNav isOpen={showBurger} /> */}
+            <BurgerNav isOpen={showBurger} closeBurger={clickHandler} />
         </div>
     )
 }

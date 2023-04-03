@@ -1,16 +1,60 @@
 .wrapper {
-    background-color: gray;
+    background-color: transparent;
     width: 100%;
     min-height: 80px;
 }
 
 .container {
     min-height: inherit;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
     align-items: center;
-    border: 1px solid red;
+    padding: 0 10px;
 }
 
-.contact {
+.logo {
+    justify-self: start;
+}
+
+.container>div:nth-child(3) {
+    justify-self: end;
+}
+
+div .contacts {
     display: none;
+}
+
+@media (min-width: 961px) {
+    .logo {
+        justify-self: center;
+    }
+
+    .container>div:nth-child(3) {
+        justify-self: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        grid-template-columns: 180px 1fr 180px;
+    }
+
+    div .contacts {
+        justify-self: center;
+        display: flex;
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .contacts div {
+        margin-bottom: 0;
+    }
+
+    .contacts span {
+        display: block;
+    }
 }

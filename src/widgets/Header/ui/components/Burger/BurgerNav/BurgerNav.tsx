@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react"
-import { menuData } from "../../../../data"
-import { BurgerCta } from "../BurgerCta"
-import { NavigationList } from "../../../common/NavigationList"
+import { useState, useEffect } from "preact/hooks"
 import styles from "./BurgerNav.module.css"
-import { classNames } from "modules/common/helpers/classNames"
-import { VideoBg } from "modules/common/components/VideoBg"
+import { linksData } from "shared/constants/header/links/linksData"
+import { AppLink } from "shared/ui/AppLink/AppLink"
+import { Contacts } from "../../Contacts/Contacts"
 
-export function BurgerNav({ showBurger, setShowBurger }) {
+interface BurgerNavProps {
+    isOpen?: boolean
+    closeBurger?: (e: MouseEvent) => void
+}
+
+export function BurgerNav({ isOpen, closeBurger }: BurgerNavProps) {
     const [height, setHeight] = useState(window.innerHeight)
 
     useEffect(() => {
@@ -20,40 +23,29 @@ export function BurgerNav({ showBurger, setShowBurger }) {
         }
     }, [])
 
-    function menuClickHandler(e) {
+    function menuClickHandler(e: MouseEvent) {
         e.stopPropagation()
     }
 
-    function closeClickHandler() {
-        setTimeout(() => {
-            setShowBurger(false)
-        }, 20)
-    }
-
     return (
-        <div
-            className={classNames(styles.overlay, {
-                [styles.video]: showBurger,
-            })}
-            onClick={closeClickHandler}
-        >
-            <VideoBg />
-            <div
-                className={classNames(styles.wrapper, {
-                    [styles.navOpen]: showBurger,
-                })}
-                onClick={menuClickHandler}
-            >
-                <div
-                    className={styles.container}
-                    style={{ height: `${height}px` }}
-                >
-                    <NavigationList
-                        closeClickHandler={closeClickHandler}
-                        menuData={menuData}
-                        className={styles.list}
-                    />
-                    <BurgerCta closeClickHandler={closeClickHandler} />
+        <div className={`${styles.overlay} ${isOpen ? styles.navOpen : ""}`}>
+            <div className={styles.wrapper} onClick={menuClickHandler}>
+                <div className={styles.container} style={{ height: `${height}px` }}>
+                    <ul className={styles.list}>
+                        {linksData.map(item => {
+                            return (
+                                <AppLink
+                                    className={styles.link}
+                                    key={item.id}
+                                    to={item.link}
+                                    closeBurger={closeBurger}
+                                >
+                                    {item.text}
+                                </AppLink>
+                            )
+                        })}
+                    </ul>
+                    <Contacts />
                 </div>
             </div>
         </div>

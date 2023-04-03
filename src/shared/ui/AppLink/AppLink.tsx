@@ -1,21 +1,23 @@
-import { classNames } from "shared/lib/classNames/classNames"
-import { Link, LinkProps } from "react-router-dom"
-import { ReactNode } from "react"
-import styles from "./AppLink.module.scss"
+import { classNames } from "shared/lib/classNames"
+import { Link } from "preact-router"
+import { ComponentChildren } from "preact"
+import styles from "./AppLink.module.css"
 
-interface AppLinkProps extends LinkProps {
+interface AppLinkProps {
     className?: string
-    children: ReactNode
+    children: ComponentChildren
+    to: string
+    closeBurger?: (e: MouseEvent) => void
 }
 
 export function AppLink(props: AppLinkProps) {
-    const { to, className, children, ...otherProps } = props
+    const { to, className, children, closeBurger } = props
 
     return (
         <Link
-            to={to}
+            href={to}
             className={classNames(styles.AppLink, {}, [className])}
-            {...otherProps}
+            onClick={closeBurger}
         >
             {children}
         </Link>

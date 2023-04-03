@@ -1,6 +1,5 @@
 .AppLink {
-    font-size: var(--font-size-base);
-    color: var(--color-dark-gray);
+    color: black;
     text-decoration: none;
 }
 
