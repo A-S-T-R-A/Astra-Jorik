@@ -82,6 +82,10 @@
     border-radius: 3px !important;
 }
 
+.chevrons {
+    font-size: 20px;
+}
+
 @media(min-width:481px) {
     .navPrev {
         left: 10px;
@@ -104,6 +108,10 @@
     .swiper,
     .title {
         margin-bottom: 40px;
+    }
+
+    .chevrons {
+        font-size: 30px;
     }
 }
 

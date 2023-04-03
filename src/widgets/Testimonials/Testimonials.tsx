@@ -3,6 +3,7 @@ import { heroImg } from "shared/constants/home"
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import { TypographyColor } from "shared/ui/Typography/Typography"
 import { Epigraph } from "shared/ui/Epigraph/Epigraph"
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper"
 import "swiper/css"
@@ -45,10 +46,12 @@ export function Testimoials() {
                 </Swiper>
                 <div className={styles.swiperProgressbar} id="swiper-progressbar"></div>
                 <div className={styles.navPrev} id="prevProject">
-                    {"<"}
+                    {/* @ts-ignore */}
+                    <HiOutlineChevronLeft className={styles.chevrons} />
                 </div>
                 <div className={styles.navNext} id="nextProject">
-                    {">"}
+                    {/* @ts-ignore */}
+                    <HiOutlineChevronRight className={styles.chevrons} />
                 </div>
             </div>
         </div>
