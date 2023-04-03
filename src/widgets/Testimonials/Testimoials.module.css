@@ -1,18 +1,19 @@
+.wrapper {
+    position: relative;
+}
+
 .container {
     position: relative;
     width: 100%;
-    height: 420px;
-}
-
-.wrapper {
-    position: relative;
-    height: 420px;
-}
-
-.container {
+    height: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 50px 20px;
+}
+
+.swiper {
+    max-width: 800px;
+    cursor: grab;
 }
 
 .img {
@@ -28,25 +29,110 @@
     z-index: 0;
 }
 
+.title {
+    margin-bottom: 20px;
+}
+
 .epigrpah {
+    display: none;
+}
+
+.navPrev,
+.navNext {
     position: absolute;
-    top: 50%;
-    transform: translateX(-20%) translateY(-50%) rotate(270deg);
     color: var(--color-white);
+    font-size: 40px;
+    top: calc(50% - 20px);
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-.epigrpah>div {
-    background-color: var(--color-white);
+.navPrev:hover,
+.navNext:hover {
+    color: var(--color-light-gray);
 }
 
-/* .swiper {
-    height: 300px !important;
-    position: relative;
-    z-index: 10 !important;
-} */
+.navPrev {
+    left: 5px;
+    transform: translateY(-50%) translateX(-25%);
+}
 
-/* .slide {
-    height: 300px !important;
-    position: relative;
-    z-index: 10 !important;
-} */
+.navNext {
+    right: 5px;
+    transform: translateY(-50%) translateX(+25%);
+}
+
+.swiperProgressbar {
+    display: block !important;
+    background: var(--color-dark-gray) !important;
+    height: 3px !important;
+    position: absolute !important;
+    bottom: 50px !important;
+    max-width: calc(100% - 40px);
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: auto !important;
+    border-radius: 3px !important;
+}
+
+.swiperProgressbar>div {
+    background: var(--color-accent) !important;
+    border-radius: 3px !important;
+}
+
+@media(min-width:481px) {
+    .navPrev {
+        left: 10px;
+    }
+
+    .navNext {
+        right: 10px;
+    }
+
+    .title {
+        margin-bottom: 30px;
+    }
+}
+
+@media(min-width:600px) {
+    .title {
+        margin-bottom: 40px;
+    }
+}
+
+@media(min-width:800px) {
+    .title {
+        margin-bottom: 50px;
+    }
+}
+
+@media(min-width:1100px) {
+    .epigrpah {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-20%) translateY(-50%) rotate(270deg);
+        color: var(--color-light-gray);
+    }
+
+    .epigrpah>div {
+        background-color: var(--color-light-gray);
+    }
+
+    .title {
+        margin-bottom: 60px;
+    }
+
+    .navPrev {
+        left: 100px;
+    }
+
+    .navNext {
+        right: 100px;
+    }
+
+    .swiperProgressbar {
+        max-width: calc(1000px - 40px);
+    }
+}

@@ -9,8 +9,9 @@ export function TestimoialSlide() {
                 <Typography color={TypographyColor.INVERTED} variant={TypographyVariant.H4} isBold>
                     Sonia Roy
                 </Typography>
-                <Typography color={TypographyColor.DARK_GRAY}>CEO INTERNATIONAL</Typography>
+                <Typography color={TypographyColor.LIGHT_GRAY}>CEO INTERNATIONAL</Typography>
             </div>
+            <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
             <img src={heroImg} alt="avatar" className={styles.avatar} />
             <Typography className={styles.testimonial} color={TypographyColor.INVERTED}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim risus eget

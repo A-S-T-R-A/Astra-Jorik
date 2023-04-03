@@ -1,11 +1,13 @@
 .container {
-    border: 1px solid red;
     z-index: 5;
     position: relative;
-    height: 250px;
     display: grid;
-    grid-template-columns: 60px 1fr;
-    grid-template-areas: "avatar name" "testimonial testimonial";
+    grid-template-rows: min-content min-content 20px auto;
+    grid-template-columns: 70px 1fr;
+    grid-template-areas: "avatar name" "avatar rating" ". ." "testimonial testimonial";
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 30px;
 }
 
 .name {
@@ -14,6 +16,7 @@
 
 .avatar {
     grid-area: avatar;
+    align-self: center;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -21,4 +24,44 @@
 
 .testimonial {
     grid-area: testimonial;
+    font-style: italic;
+}
+
+.rating {
+    grid-area: rating;
+}
+
+@media(min-width:481px) {
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media(min-width:900px) {
+    .container {
+        z-index: 5;
+        position: relative;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: auto auto 20px auto;
+        grid-template-areas:
+            "avatar name"
+            "avatar rating"
+            "avatar ."
+            "avatar testimonial";
+        column-gap: 20px;
+    }
+
+    .testimonial {
+        grid-area: testimonial;
+        font-style: italic;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        align-self: start;
+        margin-top: 10px;
+    }
 }
