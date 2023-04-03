@@ -1,7 +1,7 @@
 .wrapper {
     background-color: transparent;
     width: 100%;
-    min-height: 80px;
+    min-height: var(--navbar-height);
 }
 
 .container {
