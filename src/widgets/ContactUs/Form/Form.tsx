@@ -1,18 +1,15 @@
-import React, { useRef, useState } from "react"
+import { useRef, useState } from "preact/hooks"
 import emailjs from "@emailjs/browser"
-import { FormUi } from "./components/FormUi/FormUi"
-import { FormLoading } from "./components/FormLoading/FormLoading"
 import styles from "./Form.module.css"
-import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
-import { Section } from "shared/ui/Section/Section"
-import { ContactsSection } from "./components/ContactsSection/ContactsSection"
 import { classNames } from "shared/lib/classNames"
+import { FormUi } from "./FormUi/FormUi"
+import { FormLoading } from "./FormLoading/FormLoading"
 
 interface FormProps {
     className?: string
 }
 
-export default function Form({ className }: FormProps) {
+export function Form({ className }: FormProps) {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
@@ -29,12 +26,14 @@ export default function Form({ className }: FormProps) {
     function sendEmail() {
         setLoading(true)
         setShowForm(false)
+
         emailjs
             .sendForm(
-                process.env.REACT_APP_SERVICE_ID,
-                process.env.REACT_APP_TEMPLATE_ID,
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
+                /* @ts-ignore */
                 formRef.current,
-                process.env.REACT_APP_USER_ID
+                import.meta.env.VITE_USER_ID
             )
             .then(
                 result => {
@@ -53,19 +52,19 @@ export default function Form({ className }: FormProps) {
             })
     }
 
-    function handleNameChange(e) {
+    function handleNameChange(e: any) {
         e.preventDefault()
         setName(e.target.value)
         setNameError(false)
     }
 
-    function handleEmailChange(e) {
+    function handleEmailChange(e: any) {
         e.preventDefault()
         setEmail(e.target.value)
         setEmailError(false)
     }
 
-    function submitHandler(e) {
+    function submitHandler(e: any) {
         e.preventDefault()
 
         const nameRegEx = /^[a-zа-яё\s]+$/iu
@@ -91,7 +90,7 @@ export default function Form({ className }: FormProps) {
                     submitHandler={submitHandler}
                     handleNameChange={handleNameChange}
                     handleEmailChange={handleEmailChange}
-                    handleMessageChange={e => setMessage(e.target.value)}
+                    handleMessageChange={(e: any) => setMessage(e.target.value)}
                     nameError={nameError}
                     emailError={emailError}
                     name={name}

@@ -16,8 +16,8 @@ export function FormUi({
     message,
     handleMessageChange,
 }: any) {
-    const nameRef = useRef()
-    const emailRef = useRef()
+    const nameRef = useRef<HTMLInputElement>(null)
+    const emailRef = useRef<HTMLInputElement>(null)
 
     const nameInputClassName = classNames(styles.inputs, {
         [styles.inpError]: nameError,

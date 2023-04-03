@@ -1,10 +1,10 @@
 import { HomeProjects } from "widgets/HomeProjects"
 import { PageTitle } from "widgets/PageTitle"
 import { Hero } from "widgets/Hero"
+import { Testimoials } from "widgets/Testimonials"
+import { ContactUs } from "widgets/ContactUs"
 import { navigationData } from "../model"
 import { text } from "shared/constants/home"
-import { Testimoials } from "widgets/Testimonials"
-import { ContactUs } from "widgets/ContactUs/ContactUs"
 
 interface HomeProps {
     path: string

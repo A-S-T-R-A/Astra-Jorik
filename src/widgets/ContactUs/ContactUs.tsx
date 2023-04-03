@@ -1,6 +1,6 @@
 import { Section } from "shared/ui/Section/Section"
 import styles from "./ContactUs.module.css"
-import Form from "./Form/Form"
+import { Form } from "./Form/Form"
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import { Contact } from "./Contact/Contact"
 
