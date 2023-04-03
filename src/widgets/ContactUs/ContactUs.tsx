@@ -3,7 +3,6 @@ import styles from "./ContactUs.module.css"
 import Form from "./Form/Form"
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import { Contact } from "./Contact/Contact"
-/* import { Contacts } from "widgets/Header/ui/components/Contacts/Contacts" */
 
 export function ContactUs() {
     return (

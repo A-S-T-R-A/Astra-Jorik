@@ -7,11 +7,12 @@
 
 .titleContact {
     grid-area: titleContact;
+    margin-bottom: 30px;
 }
 
 .contact {
     grid-area: contact;
-    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .titleForm {
