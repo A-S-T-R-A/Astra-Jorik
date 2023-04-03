@@ -13,9 +13,7 @@ export function Burger({ setNavbarVisible }: BurgerProps) {
     function BurgerClickHandler(e: MouseEvent) {
         e.stopPropagation()
         setShowBurger(prev => !prev)
-        if (showBurger) {
-            setTimeout(() => setNavbarVisible?.(showBurger), 250)
-        } else {
+        if (window.scrollY > 11) {
             setNavbarVisible?.(showBurger)
         }
     }
