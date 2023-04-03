@@ -9,7 +9,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
-import { ProjectLink } from "../ProjectLink/ProjectLink"
+import { ProjectLink } from "../../../shared/ui/ProjectLink/ProjectLink"
 
 interface ProjectsRow {
     className?: string

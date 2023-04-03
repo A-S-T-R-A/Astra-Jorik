@@ -5,7 +5,7 @@ import { Epigraph } from "shared/ui/Epigraph/Epigraph"
 import { Typography, TypographyColor } from "shared/ui/Typography/Typography"
 import { ProjectsRow } from "./ProjectsRow/ProjectsRow"
 import { classNames } from "shared/lib/classNames"
-import { ProjectLink } from "./ProjectLink/ProjectLink"
+import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 
 export function HomeProjects() {
     return (
