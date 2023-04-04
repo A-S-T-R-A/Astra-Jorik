@@ -36,7 +36,7 @@ export function About() {
                         make a type specimen book. It has survived not only five centuries, but also
                         the leap into electronic typesetting, remaining essentially unchanged.
                     </Typography>
-                    <div className={styles.achievmentContainer}>
+                    {/* <div className={styles.achievmentContainer}>
                         <div className={styles.years}>
                             <Typography
                                 variant={TypographyVariant.H1}
@@ -73,7 +73,7 @@ export function About() {
                                 Clients
                             </Typography>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </Section>
