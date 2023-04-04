@@ -31,4 +31,9 @@
         grid-template-columns: auto auto;
         grid-template-areas: "titleContact contact" "titleForm form";
     }
+
+    .titleContact,
+    .titleForm {
+        margin: 0;
+    }
 }
