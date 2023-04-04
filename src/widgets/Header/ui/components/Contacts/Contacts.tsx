@@ -27,7 +27,7 @@ export function Contacts({ className }: ContactsProps) {
             </div>
             <span className={styles.separator}></span>
             <div className={styles.phoneContainer}>
-                Contact us:{" "}
+                Call us:{" "}
                 <AppLink to="tel:+1234567890" className={styles.phone}>
                     +380952821010
                 </AppLink>
