@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames"
-import { Link } from "preact-router"
+import { Link, route, useRouter } from "preact-router"
 import { ComponentChildren } from "preact"
 import styles from "./AppLink.module.css"
 
@@ -13,13 +13,14 @@ interface AppLinkProps {
 export function AppLink(props: AppLinkProps) {
     const { to, className, children, closeBurger } = props
 
+    function clickHandler(e: MouseEvent) {
+        route(to)
+        closeBurger?.(e)
+    }
+
     return (
-        <Link
-            href={to}
-            className={classNames(styles.AppLink, {}, [className])}
-            onClick={closeBurger}
-        >
+        <a className={classNames(styles.AppLink, {}, [className])} onClick={clickHandler}>
             {children}
-        </Link>
+        </a>
     )
 }
