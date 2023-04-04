@@ -28,7 +28,7 @@ export function Burger({ setNavbarVisible }: BurgerProps) {
     }
 
     return (
-        <div className={styles.wrapper} onClick={clickHandler}>
+        <div className={styles.wrapper}>
             <BurgerIcon onClick={BurgerClickHandler} isOpen={showBurger} />
             <BurgerNav isOpen={showBurger} closeBurger={clickHandler} />
         </div>

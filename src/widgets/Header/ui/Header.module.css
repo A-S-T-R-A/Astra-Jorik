@@ -4,15 +4,20 @@
     width: 100%;
     min-height: var(--navbar-height);
     z-index: 100;
+    transition: box-shadow 0.2s ease;
 }
 
 .isScrolled {
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
+    background-color: var(--color-blur);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .container {
+    max-width: 1600px;
     min-height: inherit;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-self: center;
@@ -21,7 +26,10 @@
 }
 
 .logo {
+    height: 100%;
     justify-self: start;
+    display: flex;
+    align-items: center;
 }
 
 .container>div:nth-child(3) {
