@@ -16,6 +16,11 @@ export function AppLink(props: AppLinkProps) {
     function clickHandler(e: MouseEvent) {
         route(to)
         closeBurger?.(e)
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
     }
 
     return (

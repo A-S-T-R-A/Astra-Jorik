@@ -54,7 +54,7 @@ function Breadcrupms({ navigation }: BreadcrupmsProps) {
                             variant={TypographyVariant.P}
                             color={
                                 router[0].path === link || (isNotFoundPage && isLast)
-                                    ? TypographyColor.DARK_GRAY
+                                    ? TypographyColor.BASE
                                     : TypographyColor.LIGHT_GRAY
                             }
                             className={styles.text}
