@@ -20,6 +20,7 @@ export function AllProjects() {
                                 Best First Project
                             </Typography>
                             <ProjectLink
+                                to="/projects/1"
                                 color={TypographyColor.DARK_GRAY}
                                 variant={TypographyVariant.SMALL}
                             >
