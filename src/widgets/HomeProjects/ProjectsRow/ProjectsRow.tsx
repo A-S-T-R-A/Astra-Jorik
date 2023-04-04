@@ -1,3 +1,4 @@
+import { useState } from "preact/hooks"
 import { classNames } from "shared/lib/classNames"
 import styles from "./ProjectsRow.module.css"
 import "./ProjectRow.css"
@@ -45,7 +46,7 @@ export function ProjectsRow({ className }: ProjectsRow) {
                         <div className={styles.infoOverlay}>
                             <div className={styles.slideInfo}>
                                 <Typography
-                                    variant={TypographyVariant.H4}
+                                    variant={TypographyVariant.H3}
                                     color={TypographyColor.INVERTED}
                                     className={styles.slideText}
                                 >
