@@ -12,7 +12,7 @@ export function HomeProjects() {
         <div className={styles.wrapper}>
             <SectionTitle title="Recent Project" epigraph="Check out" className={styles.title} />
 
-            <ProjectLink className={styles.link} color={TypographyColor.DARK_GRAY}>
+            <ProjectLink to="/projects" className={styles.link} color={TypographyColor.DARK_GRAY}>
                 View all projects
             </ProjectLink>
 

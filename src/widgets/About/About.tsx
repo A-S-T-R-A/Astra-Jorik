@@ -21,7 +21,9 @@ export function About() {
                         make a type specimen book. It has survived not only five centuries, but also
                         the leap into electronic typesetting, remaining essentially unchanged.
                     </Typography>
-                    <ProjectLink className={styles.link}>Learn more</ProjectLink>
+                    <ProjectLink to="/projects" className={styles.link}>
+                        our projects
+                    </ProjectLink>
                 </div>
                 <img src={kitchen1} alt="about" className={styles.images1} />
                 <img src={kitchen2} alt="facts" className={styles.images2} />
