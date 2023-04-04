@@ -1,4 +1,4 @@
-import { photo1, photo2, photo3, photo5, photo6 } from "./images"
+import { photo1, photo2, photo3, photo5, photo6, photo7, photo8, photo9, photo10 } from "./images"
 
 export const text = { pageTitle: `Dreams come true with our talented designers` }
 
@@ -6,6 +6,7 @@ export const projectsData = [
     {
         id: "1",
         img: photo1,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The first project",
         linkTitle: "First",
         epigraph: "best",
@@ -23,6 +24,7 @@ export const projectsData = [
     {
         id: "2",
         img: photo2,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The second project",
         linkTitle: "Second",
         epigraph: "best",
@@ -40,6 +42,7 @@ export const projectsData = [
     {
         id: "3",
         img: photo3,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The third project",
         linkTitle: "Third",
         epigraph: "best",
@@ -56,7 +59,8 @@ export const projectsData = [
     },
     {
         id: "4",
-        img: photo1,
+        img: photo10,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The fourth project",
         linkTitle: "Fourth",
         epigraph: "best",
@@ -74,6 +78,7 @@ export const projectsData = [
     {
         id: "5",
         img: photo5,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The fifth project",
         linkTitle: "Fifth",
         epigraph: "best",
@@ -91,6 +96,7 @@ export const projectsData = [
     {
         id: "6",
         img: photo6,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The sixth project",
         linkTitle: "Sixths",
         epigraph: "best",
@@ -107,7 +113,8 @@ export const projectsData = [
     },
     {
         id: "7",
-        img: photo1,
+        img: photo7,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The seventh project",
         linkTitle: "Seventh",
         epigraph: "best",
@@ -124,7 +131,8 @@ export const projectsData = [
     },
     {
         id: "8",
-        img: photo2,
+        img: photo8,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The eighth project",
         linkTitle: "Eights",
         epigraph: "best",
@@ -141,7 +149,8 @@ export const projectsData = [
     },
     {
         id: "9",
-        img: photo3,
+        img: photo9,
+        imgGallery: [photo5, photo6, photo7, photo9],
         title: "The nineth project",
         linkTitle: "Nineth",
         epigraph: "best",

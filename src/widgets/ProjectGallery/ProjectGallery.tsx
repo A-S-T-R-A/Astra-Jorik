@@ -4,24 +4,30 @@ import { heroImg } from "shared/constants/home"
 import { useState } from "preact/hooks"
 import { classNames } from "shared/lib/classNames"
 
-export function ProjectGallery() {
+interface ProjectGalleryProps {
+    imgGallery: string[]
+}
+
+export function ProjectGallery({ imgGallery }: ProjectGalleryProps) {
     const [active, setActive] = useState(0)
+
+    if (!imgGallery || !imgGallery.length) {
+        return null
+    }
 
     return (
         <Section>
-            {[1, 2, 3, 4].map((item, index) => {
+            {imgGallery.map((img, index) => {
                 return (
-                    active === index && (
-                        <img key={index} src={heroImg} alt="" className={styles.img} />
-                    )
+                    active === index && <img key={index} src={img} alt="" className={styles.img} />
                 )
             })}
 
             <div className={styles.imgRow}>
-                {[1, 2, 3, 4].map((item, index) => {
+                {imgGallery.map((img, index) => {
                     return (
                         <img
-                            src={heroImg}
+                            src={img}
                             key={index}
                             alt=""
                             className={classNames(

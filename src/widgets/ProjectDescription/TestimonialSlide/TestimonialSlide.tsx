@@ -13,7 +13,9 @@ export function TestimoialSlide({ className, id }: TestimonialSlideProps) {
     if (!id) return null
 
     if (testimonialsData.filter(item => item.id === id).length > 0) {
-        const { name, position, text } = { ...testimonialsData.filter(item => item.id === id)[0] }
+        const { name, position, text, img } = {
+            ...testimonialsData.filter(item => item.id === id)[0],
+        }
         return (
             <div className={classNames(styles.container, {}, [className])}>
                 <div className={styles.name}>
@@ -23,7 +25,7 @@ export function TestimoialSlide({ className, id }: TestimonialSlideProps) {
                     <Typography color={TypographyColor.DARK_GRAY}>{position}</Typography>
                 </div>
                 <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
-                <img src={heroImg} alt="avatar" className={styles.avatar} />
+                <img src={img} alt="avatar" className={styles.avatar} />
                 <Typography className={styles.testimonial}>{text}</Typography>
             </div>
         )

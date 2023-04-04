@@ -31,6 +31,7 @@ export function ProjectDetailsPage(props: ProjectDetailsPageProps) {
             epigraph,
             description,
             id: projectId,
+            imgGallery,
         } = {
             ...projectsData.filter(proj => proj.id === id)[0],
         }
@@ -47,7 +48,7 @@ export function ProjectDetailsPage(props: ProjectDetailsPageProps) {
                     title="Dreams come true with our talented architects"
                     navigation={navigationData}
                 />
-                <ProjectGallery />
+                <ProjectGallery imgGallery={imgGallery} />
                 <ProjectDescription
                     title={title}
                     epigraph={epigraph}

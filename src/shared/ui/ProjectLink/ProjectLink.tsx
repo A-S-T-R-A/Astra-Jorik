@@ -25,7 +25,10 @@ export function ProjectLink(props: ProjectLink) {
     }
 
     return (
-        <div className={classNames(styles.container, {}, [className])} onClick={clickHandler}>
+        <div
+            className={classNames(styles.container, {}, [className, styles[color]])}
+            onClick={clickHandler}
+        >
             <Typography color={color} variant={variant} className={styles.text}>
                 {children}
             </Typography>

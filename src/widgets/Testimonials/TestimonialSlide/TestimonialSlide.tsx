@@ -7,6 +7,7 @@ interface TestimonialSlideItem {
     text: string
     name: string
     position: string
+    img: string
 }
 
 interface TestimoialSlideProps {
@@ -14,7 +15,7 @@ interface TestimoialSlideProps {
 }
 
 export function TestimoialSlide({ data }: TestimoialSlideProps) {
-    const { text, name, position } = data
+    const { text, name, position, img } = data
 
     return (
         <div className={styles.container}>
@@ -25,7 +26,7 @@ export function TestimoialSlide({ data }: TestimoialSlideProps) {
                 <Typography color={TypographyColor.LIGHT_GRAY}>{position}</Typography>
             </div>
             <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
-            <img src={heroImg} alt="avatar" className={styles.avatar} />
+            <img src={img} alt="avatar" className={styles.avatar} />
             <Typography className={styles.testimonial} color={TypographyColor.INVERTED}>
                 {text}
             </Typography>

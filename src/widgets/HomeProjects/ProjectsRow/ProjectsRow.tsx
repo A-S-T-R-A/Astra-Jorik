@@ -83,7 +83,7 @@ export function ProjectsRow({ className }: ProjectsRow) {
                                     </Typography>
                                     <ProjectLink
                                         to={`/projects/${id}`}
-                                        color={TypographyColor.DARK_GRAY}
+                                        color={TypographyColor.INVERTED}
                                         variant={TypographyVariant.SMALL}
                                     >
                                         view project
