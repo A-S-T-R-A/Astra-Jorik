@@ -1,0 +1,39 @@
+.notFoundContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.error404 {
+    font-size: 100px;
+    font-weight: 700;
+    background: url('../../../shared/constants/notFoundPage/heroImg.jpg');
+    background-position: left center;
+    background-color: #484848;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.title {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.link {
+    font-size: 20px;
+}
+
+@media(min-width:481px) {
+    .error404 {
+        font-size: 200px;
+    }
+}
+
+@media(min-width:928px) {
+    .error404 {
+        font-size: 300px;
+    }
+}
