@@ -1,38 +1,48 @@
-.moreProjects {
+.container {
     display: flex;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 10px;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
 }
 
-.moreProjectsText {
+.container::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -2px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--color-dark-gray);
+    transition: width .2s ease 0s, left .2s ease 0s;
+    width: 0;
+}
+
+.container:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.container:hover {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.text {
     text-transform: uppercase;
 }
 
 .arrowRight {
-    background: var(--color-dark-gray);
-    height: 2px;
-    width: 20px;
+    padding-top: 1px;
+    fill: var(--color-dark-gray);
+}
+
+/* .AppLink {
+    color: black;
+    text-decoration: none;
     position: relative;
-    cursor: pointer;
 }
-
-.arrowRight:before,
-.arrowRight:after {
-    content: "";
-    background: var(--color-dark-gray);
-    position: absolute;
-    height: 1.5px;
-    width: 10px;
-}
-
-.arrowRight:before {
-    right: -2px;
-    bottom: -3px;
-    transform: rotate(-45deg);
-}
-
-.arrowRight:after {
-    right: -2px;
-    top: -3px;
-    transform: rotate(45deg);
-}
+ */

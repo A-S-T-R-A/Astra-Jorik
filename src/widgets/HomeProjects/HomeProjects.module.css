@@ -31,5 +31,7 @@
 
     .link {
         justify-self: end;
+        align-self: center;
+        height: fit-content;
     }
 }
