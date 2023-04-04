@@ -4,11 +4,11 @@ import { ProjectGallery } from "widgets/ProjectGallery"
 import { Testimoials } from "widgets/Testimonials"
 import { ProjectDescription } from "widgets/ProjectDescription"
 
-interface ProjectDetailsProps {
+interface ProjectDetailsPageProps {
     path: string
 }
 
-export function ProjectDetails(props: ProjectDetailsProps) {
+export function ProjectDetailsPage(props: ProjectDetailsPageProps) {
     return (
         <div>
             <PageTitle

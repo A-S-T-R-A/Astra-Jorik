@@ -8,11 +8,11 @@ import { text } from "shared/constants/home"
 import { Services } from "widgets/Services"
 import { About } from "widgets/About"
 
-interface HomeProps {
+interface HomePageProps {
     path: string
 }
 
-export function Home(props: HomeProps) {
+export function HomePage(props: HomePageProps) {
     return (
         <div>
             <PageTitle title={text.pageTitle} navigation={navigationData} />
