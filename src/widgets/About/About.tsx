@@ -2,7 +2,7 @@ import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import styles from "./About.module.css"
 import { kitchen1, kitchen2 } from "shared/constants/about/pictures"
 import { Section } from "shared/ui/Section/Section"
-import { Typography } from "shared/ui/Typography/Typography"
+import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 
 export function About() {
@@ -36,6 +36,44 @@ export function About() {
                         make a type specimen book. It has survived not only five centuries, but also
                         the leap into electronic typesetting, remaining essentially unchanged.
                     </Typography>
+                    <div className={styles.achievmentContainer}>
+                        <div className={styles.years}>
+                            <Typography
+                                variant={TypographyVariant.H1}
+                                className={styles.numbers}
+                                isBold
+                            >
+                                5
+                            </Typography>
+                            <Typography color={TypographyColor.DARK_GRAY} isBold>
+                                Years
+                            </Typography>
+                        </div>
+                        <div className={styles.projects}>
+                            <Typography
+                                variant={TypographyVariant.H1}
+                                className={styles.numbers}
+                                isBold
+                            >
+                                228
+                            </Typography>
+                            <Typography color={TypographyColor.DARK_GRAY} isBold>
+                                Projects
+                            </Typography>
+                        </div>
+                        <div className={styles.clients}>
+                            <Typography
+                                variant={TypographyVariant.H1}
+                                className={styles.numbers}
+                                isBold
+                            >
+                                300
+                            </Typography>
+                            <Typography color={TypographyColor.DARK_GRAY} isBold>
+                                Clients
+                            </Typography>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Section>

@@ -28,6 +28,23 @@
     justify-content: center;
 }
 
+.achievmentContainer {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    margin: 20px 0;
+}
+
+.numbers {
+    color: var(--color-accent) !important;
+}
+
+.years,
+.projects,
+.clients {
+    text-align: center;
+}
+
 .secondSection>div:last-child,
 .firstSection>div:last-child,
 .firstSection>div:nth-child(2) {
