@@ -7,12 +7,17 @@ import { useFullLinks } from "shared/constants/footer/usefullLinks/links"
 import { contacts } from "shared/constants/footer/contactLinks/link"
 import { company } from "shared/constants/footer/companyLinks/link"
 import { AppLink } from "shared/ui/AppLink/AppLink"
+import { route } from "preact-router"
 
 export function Footer() {
     return (
         <footer className={styles.wrapper}>
             <div className={styles.container}>
-                <Typography className={styles.logo} variant={TypographyVariant.H1}>
+                <Typography
+                    className={styles.logo}
+                    variant={TypographyVariant.H1}
+                    onClick={() => route("/")}
+                >
                     <SiFoodpanda />
                 </Typography>
                 <div className={styles.quickContact}>
@@ -64,7 +69,7 @@ export function Footer() {
                     })}
                 </div>
                 <div className={styles.copyright}>
-                    <Typography>© 228322. All Rights Reserved</Typography>
+                    <Typography>© 04.04.2023 All Rights Reserved</Typography>
                     <div className={styles.socialIcons}>
                         {socialIcons.map((item, index) => {
                             return (
@@ -85,19 +90,3 @@ export function Footer() {
         </footer>
     )
 }
-
-/* <div className={styles.socialIcons}>
-                        {socialIcons.map((item, index) => {
-                            return (
-                                <a
-                                    key={index}
-                                    className={styles.item}
-                                    href={item.link}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {item.icon}
-                                </a>
-                            )
-                        })}
-                    </div> */

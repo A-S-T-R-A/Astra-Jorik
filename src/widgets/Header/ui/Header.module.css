@@ -15,7 +15,7 @@
 }
 
 .container {
-    max-width: 1600px;
+    max-width: 1800px;
     min-height: inherit;
     margin: 0 auto;
     display: grid;
@@ -30,6 +30,7 @@
     justify-self: start;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .container>div:nth-child(3) {

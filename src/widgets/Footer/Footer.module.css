@@ -1,14 +1,17 @@
 .wrapper {
     width: 100%;
     min-height: 300px;
-    background-image: url(./images/footerKitchen.jpg);
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.475) 0%, rgba(255, 255, 255, 0.744) 30%,
+            rgb(255, 255, 255) 95%), url(./images/footerKitchen.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 
 .container {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.475) 0%, rgba(255, 255, 255, 0.744) 30%, rgb(255, 255, 255) 95%);
+    max-width: 1800px;
+    margin: 0 auto;
     min-height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -24,6 +27,7 @@
 
 .logo {
     grid-area: logo;
+    cursor: pointer;
 }
 
 .quickContact {
@@ -65,7 +69,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid var(--color-black);
+    border-top: 1px solid var(--color-dark-gray);
     grid-area: copyright;
     padding-top: 20px;
 }
@@ -132,6 +136,10 @@
     .socialIcons {
         margin: 0;
     }
+
+    .links {
+        margin: 10px 0;
+    }
 }
 
 @media (min-width: 960px) {
@@ -150,6 +158,6 @@
     }
 
     .copyright {
-        padding: 20px 80px 0;
+        padding: 20px 100px 0;
     }
 }
