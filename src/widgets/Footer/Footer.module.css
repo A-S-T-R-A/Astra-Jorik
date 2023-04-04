@@ -1,51 +1,65 @@
 .wrapper {
     width: 100%;
-    min-height: 300px;
-    background-image: url(./images/footerKitchen.jpg);
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.475) 0%, rgba(255, 255, 255, 0.744) 30%,
+            rgb(255, 255, 255) 95%), url(./images/footerKitchen.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    min-height: 350px;
+    padding-top: 150px;
+    margin-top: -200px;
 }
 
 .container {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.475) 0%, rgba(255, 255, 255, 0.744) 30%, rgb(255, 255, 255) 95%);
-    min-height: 300px;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    row-gap: 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
-        "logo menu ."
-        ". contact ."
-        ". company ."
-        ". links ."
-        "copyright copyright copyright";
-    padding: 100px 20px 20px;
+        "logo"
+        "menu"
+        "projects"
+        "contact"
+        "copyright";
+    padding: 100px 50px 20px;
+}
+
+.logoContainer {
+    grid-area: logo;
+    max-width: 236px;
 }
 
 .logo {
-    grid-area: logo;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo>svg {
+    margin-right: 5px;
 }
 
 .quickContact {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     grid-area: contact;
-    margin: 20px 0;
 }
 
-.usefullLinks {
+.projects {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    grid-area: links;
-    margin: 20px 0;
+    align-items: start;
+    grid-area: projects;
 }
 
 .company {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     grid-area: company;
 }
 
@@ -53,19 +67,24 @@
     grid-area: menu;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+}
+
+.title {
+    text-transform: capitalize;
+    margin-bottom: 5px;
 }
 
 .links {
     width: fit-content;
-    margin: 5px 0;
+    margin-bottom: 3px;
 }
 
 .copyright {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid var(--color-black);
+    border-top: 1px solid var(--color-dark-gray);
     grid-area: copyright;
     padding-top: 20px;
 }
@@ -89,37 +108,59 @@
     cursor: pointer;
 }
 
-
-
-@media (min-width: 480px) {
+@media (min-width: 368px) {
     .container {
         row-gap: 20px;
-        grid-template-columns: 40px 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas:
-            "logo menu contact"
-            ". company links"
+            "logo logo"
+            "menu projects"
+            "contact contact"
+            "copyright copyright";
+    }
+
+    .projects {
+        justify-self: center;
+    }
+}
+
+@media (min-width: 500px) {
+    .wrapper {
+        min-height: 400px;
+        padding-top: 100px;
+        margin-top: -220px;
+    }
+
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "logo logo logo"
+            "menu projects contact"
             "copyright copyright copyright";
+        justify-content: space-between;
     }
 
-    .usefullLinks,
     .quickContact {
-        margin: 0;
-    }
-
-    .menu,
-    .company {
-        margin-top: 0;
+        justify-self: end;
+        align-items: center;
     }
 }
 
 @media (min-width: 650px) {
+    .wrapper {
+        min-height: 400px;
+        padding-top: 100px;
+        margin-top: -200px;
+    }
+
     .container {
-        grid-template-columns: 50px 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
         grid-template-areas:
-            "logo menu contact company"
-            ". links links links"
+            "logo menu projects contact"
             "copyright copyright copyright copyright";
     }
 
@@ -127,29 +168,20 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        justify-self: stretch;
+        padding: 20px 50px 0;
+    }
+
+    .links {
+        margin-bottom: 5px;
+    }
+
+    .quickContact {
+        align-items: flex-start;
+        justify-self: center;
     }
 
     .socialIcons {
         margin: 0;
-    }
-}
-
-@media (min-width: 960px) {
-    .container {
-        grid-template-columns: 50px 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "logo menu contact company links"
-            "copyright copyright copyright copyright copyright";
-    }
-
-    .usefullLinks,
-    .company,
-    .menu {
-        margin: 0;
-    }
-
-    .copyright {
-        padding: 20px 80px 0;
     }
 }

@@ -1,3 +1,4 @@
+import { route } from "preact-router"
 import { useEffect, useState } from "preact/hooks"
 import { classNames } from "shared/lib/classNames"
 import { Typography, TypographyVariant } from "shared/ui/Typography/Typography"
@@ -23,7 +24,11 @@ export function Header() {
     return (
         <header className={wrapperClassName}>
             <div className={styles.container}>
-                <Typography className={styles.logo} variant={TypographyVariant.H3}>
+                <Typography
+                    className={styles.logo}
+                    onClick={() => route("/")}
+                    variant={TypographyVariant.H3}
+                >
                     <SiFoodpanda />
                 </Typography>
                 <Contacts className={styles.contacts} />
