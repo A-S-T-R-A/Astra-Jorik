@@ -20,13 +20,22 @@ export function Header() {
         }
     }, [])
 
+    function clickHandler() {
+        route("/")
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
+    }
+
     const wrapperClassName = classNames(styles.wrapper, { [styles.isScrolled]: navbarVisible }, [])
     return (
         <header className={wrapperClassName}>
             <div className={styles.container}>
                 <Typography
                     className={styles.logo}
-                    onClick={() => route("/")}
+                    onClick={clickHandler}
                     variant={TypographyVariant.H3}
                 >
                     <SiFoodpanda />

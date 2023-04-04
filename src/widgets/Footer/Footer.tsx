@@ -8,6 +8,15 @@ import { AppLink } from "shared/ui/AppLink/AppLink"
 import { route } from "preact-router"
 
 export function Footer() {
+    function clickHandler() {
+        route("/")
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
+    }
+
     return (
         <footer className={styles.wrapper}>
             <div className={styles.container}>
@@ -15,7 +24,7 @@ export function Footer() {
                     <Typography
                         className={styles.logo}
                         variant={TypographyVariant.H2}
-                        onClick={() => route("/")}
+                        onClick={clickHandler}
                     >
                         <SiFoodpanda />
                         PandaReno
