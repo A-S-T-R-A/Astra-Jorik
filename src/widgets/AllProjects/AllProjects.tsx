@@ -52,7 +52,7 @@ export function AllProjects() {
                                 </Typography>
                                 <ProjectLink
                                     to="/projects/1"
-                                    color={TypographyColor.DARK_GRAY}
+                                    color={TypographyColor.INVERTED}
                                     variant={TypographyVariant.SMALL}
                                 >
                                     view project

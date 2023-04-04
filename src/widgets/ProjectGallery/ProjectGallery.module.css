@@ -13,12 +13,35 @@
 
 .imgRowItem {
     cursor: pointer;
-    min-height: 60px;
-    max-height: 100px;
+    height: 60px;
     width: 100%;
     object-fit: cover;
 }
 
 .imgRowItem.active {
     filter: brightness(50%)
+}
+
+@media(min-width:481px) {
+    .imgRowItem {
+        height: 70px;
+    }
+}
+
+@media(min-width:650px) {
+    .imgRowItem {
+        height: 80px;
+    }
+}
+
+@media(min-width:960px) {
+    .imgRowItem {
+        height: 90px;
+    }
+}
+
+@media(min-width:1100px) {
+    .imgRowItem {
+        height: 100px;
+    }
 }
