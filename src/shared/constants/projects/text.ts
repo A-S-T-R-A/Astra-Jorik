@@ -1,9 +1,11 @@
+import { photo1, photo2, photo3, photo5, photo6 } from "./images"
+
 export const text = { pageTitle: `Dreams come true with our talented designers` }
 
 export const projectsData = [
     {
         id: "1",
-        img: "1",
+        img: photo1,
         title: "The first project",
         linkTitle: "First",
         epigraph: "best",
@@ -20,7 +22,7 @@ export const projectsData = [
     },
     {
         id: "2",
-        img: "1",
+        img: photo2,
         title: "The second project",
         linkTitle: "Second",
         epigraph: "best",
@@ -37,7 +39,7 @@ export const projectsData = [
     },
     {
         id: "3",
-        img: "1",
+        img: photo3,
         title: "The third project",
         linkTitle: "Third",
         epigraph: "best",
@@ -54,7 +56,7 @@ export const projectsData = [
     },
     {
         id: "4",
-        img: "1",
+        img: photo1,
         title: "The fourth project",
         linkTitle: "Fourth",
         epigraph: "best",
@@ -71,7 +73,7 @@ export const projectsData = [
     },
     {
         id: "5",
-        img: "1",
+        img: photo5,
         title: "The fifth project",
         linkTitle: "Fifth",
         epigraph: "best",
@@ -88,7 +90,7 @@ export const projectsData = [
     },
     {
         id: "6",
-        img: "1",
+        img: photo6,
         title: "The sixth project",
         linkTitle: "Sixths",
         epigraph: "best",
@@ -105,7 +107,7 @@ export const projectsData = [
     },
     {
         id: "7",
-        img: "1",
+        img: photo1,
         title: "The seventh project",
         linkTitle: "Seventh",
         epigraph: "best",
@@ -122,7 +124,7 @@ export const projectsData = [
     },
     {
         id: "8",
-        img: "1",
+        img: photo2,
         title: "The eighth project",
         linkTitle: "Eights",
         epigraph: "best",
@@ -139,7 +141,7 @@ export const projectsData = [
     },
     {
         id: "9",
-        img: "1",
+        img: photo3,
         title: "The nineth project",
         linkTitle: "Nineth",
         epigraph: "best",

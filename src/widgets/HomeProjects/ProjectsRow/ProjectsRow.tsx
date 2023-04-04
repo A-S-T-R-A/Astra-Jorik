@@ -39,7 +39,7 @@ export function ProjectsRow({ className }: ProjectsRow) {
                 modules={[Pagination, Navigation]}
                 spaceBetween={30}
                 breakpoints={{
-                    620: {
+                    520: {
                         slidesPerView: 2,
                     },
                     920: {
@@ -54,7 +54,7 @@ export function ProjectsRow({ className }: ProjectsRow) {
                 }}
             >
                 {projectsData.map((proj, index) => {
-                    const { id, title } = proj
+                    const { id, title, img } = proj
                     return (
                         <SwiperSlide
                             key={index}
@@ -64,7 +64,7 @@ export function ProjectsRow({ className }: ProjectsRow) {
                             onClick={() => clickHandler(id)}
                         >
                             <img
-                                src={projImg}
+                                src={img || projImg}
                                 alt=""
                                 className={classNames(
                                     styles.img,
