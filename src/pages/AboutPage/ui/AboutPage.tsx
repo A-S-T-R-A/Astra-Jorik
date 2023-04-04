@@ -3,6 +3,7 @@ import { navigationData } from "../model"
 import { text } from "shared/constants/about"
 import { About } from "widgets/About"
 import { ContactUs } from "widgets/ContactUs"
+import { Services } from "widgets/Services"
 
 interface AboutPageProps {
     path: string
@@ -13,6 +14,7 @@ export function AboutPage(props: AboutPageProps) {
         <div>
             <PageTitle title={text.pageTitle} navigation={navigationData} />
             <About />
+            <Services />
             <ContactUs />
         </div>
     )
