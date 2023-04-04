@@ -13,7 +13,7 @@ export function PageTitle(props: PageTitle) {
     const { title, navigation } = props
 
     return (
-        <Section containerClassName={styles.container}>
+        <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
             <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
                 {title}
             </Typography>

@@ -6,7 +6,7 @@ import { Contact } from "./Contact/Contact"
 
 export function ContactUs() {
     return (
-        <Section containerClassName={styles.wrapper}>
+        <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
             <SectionTitle title="Contact Us" className={styles.titleContact} />
             <Contact className={styles.contact} />
             <SectionTitle title="Drop A Message" className={styles.titleForm} />
