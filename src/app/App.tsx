@@ -20,7 +20,7 @@ export function App() {
                         <HomePage path="/" />
                         <AboutPage path="/about" />
                         <ProjectsPage path="/projects" />
-                        <ProjectDetailsPage path="/projects/1" />
+                        <ProjectDetailsPage path="/projects/:id" />
                         <ContactUsPage path="/contact" />
                         <NotFoundPage default />
                     </Router>

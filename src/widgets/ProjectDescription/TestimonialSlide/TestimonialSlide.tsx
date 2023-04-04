@@ -10,19 +10,24 @@ interface TestimonialSlideProps {
 }
 
 export function TestimoialSlide({ className, id }: TestimonialSlideProps) {
-    const { name, position, text } = { ...testimonialsData.filter(item => item.id === id)[0] }
+    if (!id) return null
 
-    return (
-        <div className={classNames(styles.container, {}, [className])}>
-            <div className={styles.name}>
-                <Typography variant={TypographyVariant.H4} isBold>
-                    {name}
-                </Typography>
-                <Typography color={TypographyColor.DARK_GRAY}>{position}</Typography>
+    if (testimonialsData.filter(item => item.id === id).length > 0) {
+        const { name, position, text } = { ...testimonialsData.filter(item => item.id === id)[0] }
+        return (
+            <div className={classNames(styles.container, {}, [className])}>
+                <div className={styles.name}>
+                    <Typography variant={TypographyVariant.H4} isBold>
+                        {name}
+                    </Typography>
+                    <Typography color={TypographyColor.DARK_GRAY}>{position}</Typography>
+                </div>
+                <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
+                <img src={heroImg} alt="avatar" className={styles.avatar} />
+                <Typography className={styles.testimonial}>{text}</Typography>
             </div>
-            <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
-            <img src={heroImg} alt="avatar" className={styles.avatar} />
-            <Typography className={styles.testimonial}>{text}</Typography>
-        </div>
-    )
+        )
+    } else {
+        return null
+    }
 }

@@ -12,6 +12,7 @@ import "swiper/css/scrollbar"
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import { ProjectLink } from "../../../shared/ui/ProjectLink/ProjectLink"
 import { route } from "preact-router"
+import { projectsData } from "shared/constants/projects"
 
 interface ProjectsRow {
     className?: string
@@ -20,8 +21,8 @@ interface ProjectsRow {
 export function ProjectsRow({ className }: ProjectsRow) {
     const [hovered, setHovered] = useState(-1)
 
-    function clickHandler() {
-        route("/projects/1")
+    function clickHandler(id: string) {
+        route(`/projects/${id}`)
         window.scrollTo({
             top: 0,
             left: 0,
@@ -52,43 +53,46 @@ export function ProjectsRow({ className }: ProjectsRow) {
                     },
                 }}
             >
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((proj, index) => (
-                    <SwiperSlide
-                        key={index}
-                        className={styles.slide}
-                        onMouseEnter={() => setHovered(index)}
-                        onMouseLeave={() => setHovered(-1)}
-                        onClick={clickHandler}
-                    >
-                        <img
-                            src={projImg}
-                            alt=""
-                            className={classNames(
-                                styles.img,
-                                { [styles.imgBlurred]: index === hovered },
-                                []
-                            )}
-                        />
-                        <div className={styles.infoOverlay}>
-                            <div className={styles.slideInfo}>
-                                <Typography
-                                    variant={TypographyVariant.H3}
-                                    color={TypographyColor.INVERTED}
-                                    className={styles.slideText}
-                                >
-                                    Best First Project
-                                </Typography>
-                                <ProjectLink
-                                    to="/projects/1"
-                                    color={TypographyColor.DARK_GRAY}
-                                    variant={TypographyVariant.SMALL}
-                                >
-                                    view project
-                                </ProjectLink>
+                {projectsData.map((proj, index) => {
+                    const { id, title } = proj
+                    return (
+                        <SwiperSlide
+                            key={index}
+                            className={styles.slide}
+                            onMouseEnter={() => setHovered(index)}
+                            onMouseLeave={() => setHovered(-1)}
+                            onClick={() => clickHandler(id)}
+                        >
+                            <img
+                                src={projImg}
+                                alt=""
+                                className={classNames(
+                                    styles.img,
+                                    { [styles.imgBlurred]: index === hovered },
+                                    []
+                                )}
+                            />
+                            <div className={styles.infoOverlay}>
+                                <div className={styles.slideInfo}>
+                                    <Typography
+                                        variant={TypographyVariant.H3}
+                                        color={TypographyColor.INVERTED}
+                                        className={styles.slideText}
+                                    >
+                                        {title}
+                                    </Typography>
+                                    <ProjectLink
+                                        to={`/projects/${id}`}
+                                        color={TypographyColor.DARK_GRAY}
+                                        variant={TypographyVariant.SMALL}
+                                    >
+                                        view project
+                                    </ProjectLink>
+                                </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
+                        </SwiperSlide>
+                    )
+                })}
             </Swiper>
         </div>
     )
