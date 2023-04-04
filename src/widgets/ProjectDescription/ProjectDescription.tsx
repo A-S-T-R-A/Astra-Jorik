@@ -27,7 +27,7 @@ export function ProjectDescription() {
                     typesetting, remaining essentially unchanged.
                 </Typography>
             </div>
-            <TestimoialSlide className={styles.testimonial} />
+            <TestimoialSlide className={styles.testimonial} id="1" />
         </Section>
     )
 }

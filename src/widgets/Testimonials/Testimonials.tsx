@@ -11,6 +11,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import { TestimoialSlide } from "./TestimonialSlide/TestimonialSlide"
+import { testimonialsData } from "shared/constants/testimonials"
 
 export function Testimoials() {
     return (
@@ -38,9 +39,9 @@ export function Testimoials() {
                     centeredSlides={true}
                     className={styles.swiper}
                 >
-                    {[1, 2, 3, 4].map((proj, index) => (
-                        <SwiperSlide key={index} className={styles.slide}>
-                            <TestimoialSlide />
+                    {testimonialsData.map(proj => (
+                        <SwiperSlide key={proj.id} className={styles.slide}>
+                            <TestimoialSlide data={proj} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
