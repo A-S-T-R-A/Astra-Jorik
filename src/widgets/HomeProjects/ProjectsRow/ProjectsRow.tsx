@@ -11,12 +11,24 @@ import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import { ProjectLink } from "../../../shared/ui/ProjectLink/ProjectLink"
+import { route } from "preact-router"
 
 interface ProjectsRow {
     className?: string
 }
 
 export function ProjectsRow({ className }: ProjectsRow) {
+    const [hovered, setHovered] = useState(-1)
+
+    function clickHandler() {
+        route("/projects/1")
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
+    }
+
     return (
         <div className={classNames(styles.container, {}, [className, "projects-swiper-container"])}>
             <Swiper
@@ -41,8 +53,22 @@ export function ProjectsRow({ className }: ProjectsRow) {
                 }}
             >
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((proj, index) => (
-                    <SwiperSlide key={index} className={styles.slide}>
-                        <img src={projImg} alt="" className={styles.img} />
+                    <SwiperSlide
+                        key={index}
+                        className={styles.slide}
+                        onMouseEnter={() => setHovered(index)}
+                        onMouseLeave={() => setHovered(-1)}
+                        onClick={clickHandler}
+                    >
+                        <img
+                            src={projImg}
+                            alt=""
+                            className={classNames(
+                                styles.img,
+                                { [styles.imgBlurred]: index === hovered },
+                                []
+                            )}
+                        />
                         <div className={styles.infoOverlay}>
                             <div className={styles.slideInfo}>
                                 <Typography

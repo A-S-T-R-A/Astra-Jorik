@@ -18,9 +18,12 @@
     height: 100%;
     min-height: 300px;
     max-height: 350px;
-
     object-fit: cover;
     margin-bottom: -4px;
+}
+
+.imgBlurred {
+    filter: blur(2px);
 }
 
 .infoOverlay {
