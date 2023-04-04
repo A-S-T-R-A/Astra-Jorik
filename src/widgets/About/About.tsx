@@ -1,6 +1,6 @@
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import styles from "./About.module.css"
-import { kitchen1, kitchen2 } from "./pictures"
+import { kitchen1, kitchen2 } from "shared/constants/about/pictures"
 import { Section } from "shared/ui/Section/Section"
 import { Typography } from "shared/ui/Typography/Typography"
 import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
