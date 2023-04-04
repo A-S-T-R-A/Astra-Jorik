@@ -27,6 +27,10 @@
     margin-bottom: -4px;
 }
 
+.imgBlurred {
+    filter: blur(2px);
+}
+
 .infoOverlay {
     background-color: none;
     position: absolute;
@@ -35,10 +39,6 @@
     right: 0;
     bottom: 0;
     transition: all .3s ease;
-}
-
-.infoOverlay:hover {
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .slideInfo {

@@ -5,30 +5,11 @@
     cursor: pointer;
     position: relative;
     width: fit-content;
+    transition: all .2s ease;
 }
 
-.container::after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: -2px;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: var(--color-dark-gray);
-    transition: width .2s ease 0s, left .2s ease 0s;
-    width: 0;
-}
-
-.container:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-.container:hover {
-    opacity: 1;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
+.container.animated {
+    animation: arrow-pulse 1.8s;
 }
 
 .text {
@@ -40,9 +21,14 @@
     fill: var(--color-dark-gray);
 }
 
-/* .AppLink {
-    color: black;
-    text-decoration: none;
-    position: relative;
+.container:hover {
+    transform: translateX(20px);
 }
- */
+
+.container:hover .arrowRight {
+    fill: var(--color-base);
+}
+
+.container:hover .text {
+    color: var(--color-base);
+}
