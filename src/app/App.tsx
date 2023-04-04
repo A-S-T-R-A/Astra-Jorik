@@ -4,6 +4,7 @@ import { Header } from "widgets/Header"
 import { AboutPage } from "pages/AboutPage"
 import { ProjectsPage } from "pages/ProjectsPage"
 import { Suspense } from "preact/compat"
+import { Footer } from "widgets/Footer"
 import { ContactUsPage } from "pages/ContactUsPage"
 import { HomePage } from "pages/HomePage"
 import { ProjectDetailsPage } from "pages/ProjectDetailsPage"
@@ -24,6 +25,7 @@ export function App() {
                         <NotFoundPage default />
                     </Router>
                 </div>
+                <Footer />
             </div>
         </Suspense>
     )

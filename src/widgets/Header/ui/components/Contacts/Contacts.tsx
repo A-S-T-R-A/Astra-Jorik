@@ -1,7 +1,6 @@
 import { AppLink } from "shared/ui/AppLink/AppLink"
 import styles from "./Contacts.module.css"
-import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa"
-import { socialIcons } from "shared/constants/header/socialIcons/socialIcons"
+import { socialIcons } from "shared/constants/links/socialIcons/socialIcons"
 import { classNames } from "shared/lib/classNames"
 
 interface ContactsProps {

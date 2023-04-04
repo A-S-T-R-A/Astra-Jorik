@@ -21,9 +21,7 @@ export function HomePage(props: HomePageProps) {
             <Services />
             <HomeProjects />
             <Testimoials />
-            <PageTitle title={text.pageTitle} navigation={navigationData} />
             <ContactUs />
-            <PageTitle title={text.pageTitle} navigation={navigationData} />
         </div>
     )
 }

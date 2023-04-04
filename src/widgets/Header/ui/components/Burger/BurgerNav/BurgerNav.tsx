@@ -1,6 +1,6 @@
 import { useState, useEffect } from "preact/hooks"
 import styles from "./BurgerNav.module.css"
-import { linksData } from "shared/constants/header/links/linksData"
+import { linksData } from "shared/constants/links/menuLinks/linksData"
 import { AppLink } from "shared/ui/AppLink/AppLink"
 import { Contacts } from "../../Contacts/Contacts"
 
