@@ -28,7 +28,7 @@ export function About() {
                 <img src={kitchen1} alt="about" className={styles.images1} />
                 <img src={kitchen2} alt="facts" className={styles.images2} />
                 <div className={styles.secondSection}>
-                    <SectionTitle epigraph="fun facts" title="Our designers" />
+                    <SectionTitle epigraph="our skills" title="Our designers" />
                     <Typography>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the

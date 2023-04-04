@@ -2,29 +2,34 @@ import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typogr
 import styles from "./TestimonialSlide.module.css"
 import { heroImg } from "shared/constants/home"
 import { classNames } from "shared/lib/classNames"
+import { testimonialsData } from "shared/constants/testimonials"
 
 interface TestimonialSlideProps {
     className?: string
+    id: string
 }
 
-export function TestimoialSlide({ className }: TestimonialSlideProps) {
-    return (
-        <div className={classNames(styles.container, {}, [className])}>
-            <div className={styles.name}>
-                <Typography variant={TypographyVariant.H4} isBold>
-                    Sonia Roy
-                </Typography>
-                <Typography color={TypographyColor.LIGHT_GRAY}>CEO INTERNATIONAL</Typography>
+export function TestimoialSlide({ className, id }: TestimonialSlideProps) {
+    if (!id) return null
+
+    if (testimonialsData.filter(item => item.id === id).length > 0) {
+        const { name, position, text, img } = {
+            ...testimonialsData.filter(item => item.id === id)[0],
+        }
+        return (
+            <div className={classNames(styles.container, {}, [className])}>
+                <div className={styles.name}>
+                    <Typography variant={TypographyVariant.H4} isBold>
+                        {name}
+                    </Typography>
+                    <Typography color={TypographyColor.DARK_GRAY}>{position}</Typography>
+                </div>
+                <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
+                <img src={img} alt="avatar" className={styles.avatar} />
+                <Typography className={styles.testimonial}>{text}</Typography>
             </div>
-            <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
-            <img src={heroImg} alt="avatar" className={styles.avatar} />
-            <Typography className={styles.testimonial}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim risus eget
-                augue dignissim consectetur. Donec et nisl id ante tempor congue vitae a metus.
-                Curabitur a quam eu elit scelerisque laoreet. Suspendisse vel orci sed sapien
-                faucibus consectetur. Integer in nunc eu mauris maximus blandit. Sed lacinia enim
-                vel ipsum consectetur, at ullamcorper lorem dignissim.
-            </Typography>
-        </div>
-    )
+        )
+    } else {
+        return null
+    }
 }

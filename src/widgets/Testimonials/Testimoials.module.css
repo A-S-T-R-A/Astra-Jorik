@@ -78,7 +78,7 @@
     border-radius: 3px !important;
 }
 
-.swiperProgressbar>div {
+.swiperProgressbar span {
     background: var(--color-accent) !important;
     border-radius: 3px !important;
 }

@@ -32,3 +32,19 @@
 .container:hover .text {
     color: var(--color-base);
 }
+
+.inverted .text {
+    color: var(--color-middle-gray);
+}
+
+.inverted .arrowRight {
+    fill: var(--color-middle-gray);
+}
+
+.inverted:hover .arrowRight {
+    fill: var(--color-white);
+}
+
+.inverted:hover .text {
+    color: var(--color-white);
+}

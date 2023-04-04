@@ -6,6 +6,7 @@ import projImg from "./proj.jpg"
 import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 import { route } from "preact-router"
 import { classNames } from "shared/lib/classNames"
+import { projectsData } from "shared/constants/projects"
 
 export function AllProjects() {
     const [hovered, setHovered] = useState(-1)
@@ -21,43 +22,46 @@ export function AllProjects() {
 
     return (
         <Section containerClassName={styles.container}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
-                <div
-                    key={index}
-                    className={styles.slide}
-                    onMouseEnter={() => setHovered(index)}
-                    onMouseLeave={() => setHovered(-1)}
-                    onClick={clickHandler}
-                >
-                    <img
-                        src={projImg}
-                        alt=""
-                        className={classNames(
-                            styles.img,
-                            { [styles.imgBlurred]: index === hovered },
-                            []
-                        )}
-                    />
-                    <div className={styles.infoOverlay}>
-                        <div className={styles.slideInfo}>
-                            <Typography
-                                variant={TypographyVariant.H4}
-                                color={TypographyColor.INVERTED}
-                                className={styles.slideText}
-                            >
-                                Best First Project
-                            </Typography>
-                            <ProjectLink
-                                to="/projects/1"
-                                color={TypographyColor.DARK_GRAY}
-                                variant={TypographyVariant.SMALL}
-                            >
-                                view project
-                            </ProjectLink>
+            {projectsData.map((proj, index) => {
+                const { id, title, img } = proj
+                return (
+                    <div
+                        key={index}
+                        className={styles.slide}
+                        onMouseEnter={() => setHovered(index)}
+                        onMouseLeave={() => setHovered(-1)}
+                        onClick={clickHandler}
+                    >
+                        <img
+                            src={img || projImg}
+                            alt=""
+                            className={classNames(
+                                styles.img,
+                                { [styles.imgBlurred]: index === hovered },
+                                []
+                            )}
+                        />
+                        <div className={styles.infoOverlay}>
+                            <div className={styles.slideInfo}>
+                                <Typography
+                                    variant={TypographyVariant.H4}
+                                    color={TypographyColor.INVERTED}
+                                    className={styles.slideText}
+                                >
+                                    {title}
+                                </Typography>
+                                <ProjectLink
+                                    to="/projects/1"
+                                    color={TypographyColor.INVERTED}
+                                    variant={TypographyVariant.SMALL}
+                                >
+                                    view project
+                                </ProjectLink>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                )
+            })}
         </Section>
     )
 }
