@@ -1,5 +1,4 @@
 import { PageTitle } from "widgets/PageTitle"
-import { navigationData } from "../model"
 import { ProjectGallery } from "widgets/ProjectGallery"
 import { ProjectDescription } from "widgets/ProjectDescription"
 import { ContactUs } from "widgets/ContactUs"
@@ -15,7 +14,7 @@ interface ProjectDetailsPageProps {
 }
 
 export function ProjectDetailsPage(props: ProjectDetailsPageProps) {
-    const { id } = props
+    const { id, path } = props
 
     const isProjectExists = projectsData.filter(proj => proj.id === id).length === 1
 
@@ -28,12 +27,19 @@ export function ProjectDetailsPage(props: ProjectDetailsPageProps) {
     if (isProjectExists) {
         const {
             title,
+            linkTitle,
             epigraph,
             description,
             id: projectId,
         } = {
             ...projectsData.filter(proj => proj.id === id)[0],
         }
+
+        const navigationData = [
+            { link: "/", text: "home" },
+            { link: "/projects", text: "Projects" },
+            { link: path, text: linkTitle },
+        ]
 
         return (
             <div>

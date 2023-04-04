@@ -5,6 +5,7 @@ export const projectsData = [
         id: "1",
         img: "1",
         title: "The first project",
+        linkTitle: "First",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -21,6 +22,7 @@ export const projectsData = [
         id: "2",
         img: "1",
         title: "The second project",
+        linkTitle: "Second",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -37,6 +39,7 @@ export const projectsData = [
         id: "3",
         img: "1",
         title: "The third project",
+        linkTitle: "Third",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -53,6 +56,7 @@ export const projectsData = [
         id: "4",
         img: "1",
         title: "The fourth project",
+        linkTitle: "Fourth",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -69,6 +73,7 @@ export const projectsData = [
         id: "5",
         img: "1",
         title: "The fifth project",
+        linkTitle: "Fifth",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -85,6 +90,7 @@ export const projectsData = [
         id: "6",
         img: "1",
         title: "The sixth project",
+        linkTitle: "Sixths",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -101,6 +107,7 @@ export const projectsData = [
         id: "7",
         img: "1",
         title: "The seventh project",
+        linkTitle: "Seventh",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -117,6 +124,7 @@ export const projectsData = [
         id: "8",
         img: "1",
         title: "The eighth project",
+        linkTitle: "Eights",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -133,6 +141,7 @@ export const projectsData = [
         id: "9",
         img: "1",
         title: "The nineth project",
+        linkTitle: "Nineth",
         epigraph: "best",
         description: [
             `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
