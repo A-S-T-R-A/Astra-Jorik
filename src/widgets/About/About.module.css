@@ -1,6 +1,5 @@
 .container {
     display: grid;
-    align-items: center;
     row-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -23,8 +22,10 @@
     height: fit-content;
     grid-area: facts;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .secondSection>div:last-child,
@@ -45,14 +46,15 @@
 .images2 {
     width: 100%;
     height: fit-content;
-    justify-self: center;
+    justify-self: start;
     object-fit: cover;
 }
 
 
 @media (min-width: 768px) {
     .container {
-        column-gap: 40px;
+        column-gap: 5vw;
+        row-gap: 30px;
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
         grid-template-areas:
