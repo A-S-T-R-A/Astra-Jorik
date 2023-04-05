@@ -16,7 +16,7 @@ export function App() {
             <div>
                 <Header />
                 <div className="page-wrapper">
-                    <Router>
+                    <Router onChange={e => console.log(e)}>
                         <HomePage path="/" />
                         <AboutPage path="/about" />
                         <ProjectsPage path="/projects" />

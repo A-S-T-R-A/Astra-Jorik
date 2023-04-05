@@ -6,6 +6,7 @@ import { linksData } from "shared/constants/links/menuLinks/linksData"
 import { contacts } from "shared/constants/footer/contactLinks/link"
 import { AppLink } from "shared/ui/AppLink/AppLink"
 import { route } from "preact-router"
+import { projectsData } from "shared/constants/projects"
 
 export function Footer() {
     function clickHandler() {
@@ -50,10 +51,11 @@ export function Footer() {
                     <Typography variant={TypographyVariant.P} isBold className={styles.title}>
                         Projects:
                     </Typography>
-                    {["First", "Second", "Third", "Fourth"].map(item => {
+                    {projectsData.slice(0, 4).map(proj => {
+                        const { id, linkTitle } = proj
                         return (
-                            <AppLink to="/projects/1" className={styles.links}>
-                                {item}
+                            <AppLink to={`/projects/${id}`} className={styles.links}>
+                                {linkTitle}
                             </AppLink>
                         )
                     })}

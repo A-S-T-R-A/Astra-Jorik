@@ -39,7 +39,7 @@ export function ProjectDetailsPage(props: ProjectDetailsPageProps) {
         const navigationData = [
             { link: "/", text: "home" },
             { link: "/projects", text: "Projects" },
-            { link: path, text: linkTitle },
+            { link: `/projects/${id}`, text: linkTitle },
         ]
 
         return (
