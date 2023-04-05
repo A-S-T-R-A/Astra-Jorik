@@ -9,7 +9,7 @@ interface ContactUsPageProps {
 
 export function ContactUsPage(props: ContactUsPageProps) {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <PageTitle
                 title="Dreams come true with our talented architects"
                 navigation={navigationData}

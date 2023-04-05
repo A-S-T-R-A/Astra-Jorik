@@ -11,8 +11,8 @@ import { projectsData } from "shared/constants/projects"
 export function AllProjects() {
     const [hovered, setHovered] = useState(-1)
 
-    function clickHandler() {
-        route("/projects/1")
+    function clickHandler(id: string) {
+        route(`/projects/${id}`)
         window.scrollTo({
             top: 0,
             left: 0,
@@ -30,7 +30,7 @@ export function AllProjects() {
                         className={styles.slide}
                         onMouseEnter={() => setHovered(index)}
                         onMouseLeave={() => setHovered(-1)}
-                        onClick={clickHandler}
+                        onClick={() => clickHandler(id)}
                     >
                         <img
                             src={img || projImg}

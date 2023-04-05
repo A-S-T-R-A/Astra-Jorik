@@ -47,13 +47,16 @@ function Breadcrupms({ navigation }: BreadcrupmsProps) {
             {navigation.map((item, index) => {
                 const { text, link } = item
                 const isNotFoundPage = !Object.values(routes).some(item => router[0].path)
+                const isProjectDetails = link.match("/projects/")
                 const isLast = index === navigation.length - 1
                 return (
                     <Fragment key={index}>
                         <Typography
                             variant={TypographyVariant.P}
                             color={
-                                router[0].path === link || (isNotFoundPage && isLast)
+                                router[0].path === link ||
+                                isProjectDetails ||
+                                (isNotFoundPage && isLast)
                                     ? TypographyColor.BASE
                                     : TypographyColor.LIGHT_GRAY
                             }
