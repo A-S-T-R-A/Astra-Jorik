@@ -8,9 +8,10 @@
 .error404 {
     font-size: 100px;
     font-weight: 700;
-    background: url('../../../shared/constants/notFoundPage/heroImg.jpg');
-    background-position: left center;
+    background: url('../../../shared/constants/footer/images/footerKitchen.jpg');
+    background-position: center center;
     background-color: #484848;
+    background-repeat: no-repeat;
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
