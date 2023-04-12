@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks"
+import { useState, useEffect } from "preact/hooks"
 import { Section } from "shared/ui/Section/Section"
 import styles from "./GalleryProjects.module.css"
 import projImg from "./proj.jpg"
@@ -7,6 +7,10 @@ import { projectsData } from "shared/constants/projects"
 
 export function GalleryProjects() {
     const [selectedImg, setSelectedImg] = useState("")
+
+    useEffect(() => {
+        document.body.style.overflow = selectedImg ? "hidden" : ""
+    }, [selectedImg])
 
     function handleClick(img: string) {
         setSelectedImg(img)
