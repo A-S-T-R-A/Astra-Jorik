@@ -9,6 +9,7 @@ import { ContactUsPage } from "pages/ContactUsPage"
 import { HomePage } from "pages/HomePage"
 import { ProjectDetailsPage } from "pages/ProjectDetailsPage"
 import { NotFoundPage } from "pages/NotFoundPage"
+import { GalleryPage } from "pages/GalleryPage"
 
 export function App() {
     return (
@@ -19,6 +20,7 @@ export function App() {
                     <Router>
                         <HomePage path="/" />
                         <AboutPage path="/about" />
+                        <GalleryPage path="/gallery" />
                         <ProjectsPage path="/projects" />
                         <ProjectDetailsPage path="/projects/:id" />
                         <ContactUsPage path="/contact" />
