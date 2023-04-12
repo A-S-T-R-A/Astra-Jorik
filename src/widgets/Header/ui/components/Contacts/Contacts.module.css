@@ -56,8 +56,4 @@
         height: 40px;
         border: 1px solid var(--color-black);
     }
-
-    .socialIcons {
-        display: flex;
-    }
 }
