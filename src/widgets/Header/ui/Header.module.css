@@ -48,6 +48,10 @@
     font-size: var(--font-size-base);
 }
 
+.contacts>:first-child {
+    display: none;
+}
+
 @media (min-width: 769px) {
     .container {
         grid-template-columns: 180px 1fr 180px;
@@ -60,6 +64,10 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
+    }
+
+    .contacts>:first-child {
+        display: flex;
     }
 
     .contacts>:last-child {
