@@ -9,6 +9,8 @@ import { route } from "preact-router"
 import { projectsData } from "shared/constants/projects"
 
 export function Footer() {
+    const currentYear = new Date().getFullYear()
+
     function clickHandler() {
         route("/")
         window.scrollTo({
@@ -73,7 +75,7 @@ export function Footer() {
                     })}
                 </div>
                 <div className={styles.copyright}>
-                    <Typography>© 2023 All Rights Reserved</Typography>
+                    <Typography>© {currentYear} All Rights Reserved</Typography>
                     <div className={styles.socialIcons}>
                         {socialIcons.map((item, index) => {
                             return (
