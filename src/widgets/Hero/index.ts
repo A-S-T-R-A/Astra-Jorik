@@ -1,3 +1,2 @@
-import { Hero } from "./Hero"
-
-export { Hero }
+export { Hero } from "./ui/Hero"
+export { useHeroSlice } from "./model/useHeroSlice"

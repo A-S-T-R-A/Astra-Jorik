@@ -1,24 +1,14 @@
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import styles from "./About.module.css"
-import { kitchen1, kitchen2 } from "shared/constants/about/pictures"
 import { Section } from "shared/ui/Section/Section"
 import { Typography } from "shared/ui/Typography/Typography"
 import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
-import { useEffect, useState } from "preact/hooks"
-import { urlFor, client } from "../../client"
+import { urlFor } from "../../client"
+import { useContext } from "preact/hooks"
+import { Context } from "app/ContextProvider"
 
 export function About() {
-    const [about, setAbout] = useState("")
-    const [ourSkills, setOurSkills] = useState("")
-
-    useEffect(() => {
-        const query = "*[_type == 'about']"
-
-        client.fetch(query).then(data => {
-            setAbout(data?.[1])
-            setOurSkills(data?.[0])
-        })
-    }, [])
+    const { about, ourSkills } = useContext(Context)
 
     return (
         <Section>
