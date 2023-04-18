@@ -4,9 +4,20 @@ import styles from "./GalleryProjects.module.css"
 import projImg from "./proj.jpg"
 import { classNames } from "shared/lib/classNames"
 import { projectsData } from "shared/constants/projects"
+import { urlFor, client } from "../../client"
 
 export function GalleryProjects() {
     const [selectedImg, setSelectedImg] = useState("")
+    const [photos, setPhotos] = useState<Array<any>>([])
+
+    useEffect(() => {
+        const query = "*[_type == 'gallery']"
+
+        client.fetch(query).then(data => {
+            setPhotos(data)
+            console.log(photos)
+        })
+    }, [])
 
     useEffect(() => {
         document.body.style.overflow = selectedImg ? "hidden" : ""
@@ -22,15 +33,14 @@ export function GalleryProjects() {
 
     return (
         <Section containerClassName={styles.container}>
-            {projectsData.map((proj, index) => {
-                const { img } = proj
+            {photos.map((photo, index) => {
                 return (
                     <div key={index} className={styles.slide}>
                         <img
-                            src={img || projImg}
+                            src={urlFor(photo?.imageUrl).url() || projImg}
                             alt="image"
                             className={classNames(styles.img, {}, [])}
-                            onClick={() => handleClick(img)}
+                            onClick={() => handleClick(urlFor(photo?.imageUrl).url())}
                         />
                     </div>
                 )

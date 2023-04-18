@@ -1,4 +1,10 @@
 import { render } from "preact"
 import { App } from "app/App"
+import { ContextProvider } from "app/ContextProvider"
 
-render(<App />, document.getElementById("app") as HTMLElement)
+render(
+    <ContextProvider>
+        <App />
+    </ContextProvider>,
+    document.getElementById("app") as HTMLElement
+)

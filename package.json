@@ -11,6 +11,8 @@
     "dependencies": {
         "@emailjs/browser": "^3.10.0",
         "@preact/compat": "^17.1.2",
+        "@sanity/client": "^5.4.2",
+        "@sanity/image-url": "^1.0.2",
         "emailjs": "^4.0.1",
         "preact": "^10.13.0",
         "preact-router": "^4.1.0",

@@ -12,7 +12,7 @@ interface AboutPageProps {
 export function AboutPage(props: AboutPageProps) {
     return (
         <div>
-            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <PageTitle navigation={navigationData} />
             <About />
             <Services />
             <ContactUs />

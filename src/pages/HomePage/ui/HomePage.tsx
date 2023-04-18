@@ -15,7 +15,7 @@ interface HomePageProps {
 export function HomePage(props: HomePageProps) {
     return (
         <div>
-            <PageTitle title={text.pageTitle} navigation={navigationData} />
+            <PageTitle navigation={navigationData} />
             <Hero />
             <About />
             <Services />

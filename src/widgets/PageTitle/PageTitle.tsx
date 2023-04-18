@@ -3,19 +3,30 @@ import styles from "./PageTitle.module.css"
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import { Fragment } from "preact/jsx-runtime"
 import { route, useRouter } from "preact-router"
+import { useEffect, useState } from "preact/hooks"
+import { urlFor, client } from "../../client"
 
 interface PageTitle {
-    title: string
     navigation: BreadcrupmsNavigation[]
 }
 
 export function PageTitle(props: PageTitle) {
-    const { title, navigation } = props
+    const { navigation } = props
+
+    const [home, setHome] = useState("")
+
+    useEffect(() => {
+        const query = "*[_type == 'home']"
+
+        client.fetch(query).then(data => {
+            setHome(data[0].title)
+        })
+    }, [])
 
     return (
         <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
             <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
-                {title}
+                {home}
             </Typography>
             <Breadcrupms navigation={navigation} />
         </Section>
