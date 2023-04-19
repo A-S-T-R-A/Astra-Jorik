@@ -1,3 +1,3 @@
-import { Testimoials } from "./Testimonials"
+import { Testimoials } from "./ui/Testimonials"
 
 export { Testimoials }

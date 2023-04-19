@@ -1,4 +1,4 @@
-import { client } from "../../../client"
+import { client } from "shared/lib/client"
 import { useEffect, useState } from "preact/hooks"
 
 export function useAboutSlice() {

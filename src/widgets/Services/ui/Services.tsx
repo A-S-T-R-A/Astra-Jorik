@@ -2,15 +2,19 @@ import { Section } from "shared/ui/Section/Section"
 import styles from "./Services.module.css"
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import { classNames } from "shared/lib/classNames"
-import { servicesData } from "./data"
 import { Typography, TypographyVariant } from "shared/ui/Typography/Typography"
+import { useContext } from "preact/hooks"
+import { Context } from "app/ContextProvider"
+import { urlFor } from "shared/lib/client"
 
 export function Services() {
+    const { title } = useContext(Context)
+
     return (
         <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
             <SectionTitle
-                title="Our Main Services"
-                epigraph="why choose us"
+                title={title?.[2].title}
+                epigraph={title?.[2].epigraph}
                 className={styles.title}
             />
             <ServicesList />
@@ -20,34 +24,36 @@ export function Services() {
 
 interface ServicesListProps {
     className?: string
+    data?: any
 }
 
 export function ServicesList(props: ServicesListProps) {
     const { className } = props
-
+    const { services } = useContext(Context)
     return (
         <div className={classNames(styles.listContainer, {}, [className])}>
-            {servicesData.map(item => (
-                <ListItem key={item.id} data={item} className={styles.gridItem} />
-            ))}
+            {!!services &&
+                services.map((item, index) => (
+                    <ListItem key={index} data={item} className={styles.gridItem} />
+                ))}
         </div>
     )
 }
 
-function ListItem({ data, className }: any) {
-    const { img, title, desc } = data
+function ListItem({ data, className }: ServicesListProps) {
+    const { service, description } = data
 
     const containerClassName = classNames(styles.itemContainer, {}, [className])
 
     return (
         <div className={containerClassName}>
-            <img src={img} alt="" className={styles.itemImg} />
+            <img src={urlFor(data.imageUrl).url()} alt="" className={styles.itemImg} />
             <div className={styles.itemInfoContainer}>
                 <Typography variant={TypographyVariant.H4} className={styles.itemTitle}>
-                    {title}
+                    {service}
                 </Typography>
                 <Typography variant={TypographyVariant.SMALL} className={styles.itemDesc}>
-                    {desc}
+                    {description}
                 </Typography>
             </div>
         </div>

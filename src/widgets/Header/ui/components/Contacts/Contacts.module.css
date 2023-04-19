@@ -5,6 +5,38 @@
     align-items: center;
 }
 
+.link {
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+    width: 100%;
+    color: var(--color-base);
+}
+
+.link::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -3px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--color-black);
+    transition: width .2s ease 0s, left .2s ease 0s;
+    width: 0;
+}
+
+.link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.link:hover {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
 .socialIcons {
     width: 100%;
     max-width: 200px;

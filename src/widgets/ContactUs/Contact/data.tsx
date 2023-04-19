@@ -7,7 +7,7 @@ export const contactData = [
         id: 1,
         Icon: <BsGeoAlt size={35} />,
         title: "Our Location",
-        desc: <p>London, 221B Baker Street from 1881 to 1904."</p>,
+        desc: <p>London, 221B Baker Street from 1881 to 1904</p>,
     },
     {
         id: 2,

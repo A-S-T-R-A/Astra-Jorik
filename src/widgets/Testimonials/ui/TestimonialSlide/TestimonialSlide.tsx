@@ -1,13 +1,13 @@
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import styles from "./TestimonialSlide.module.css"
 import { heroImg } from "shared/constants/home"
+import { urlFor } from "../../../../shared/lib/client"
 
 interface TestimonialSlideItem {
-    id: string
-    text: string
+    feedback: string
     name: string
-    position: string
-    img: string
+    company: string
+    imageUrl: string
 }
 
 interface TestimoialSlideProps {
@@ -15,20 +15,18 @@ interface TestimoialSlideProps {
 }
 
 export function TestimoialSlide({ data }: TestimoialSlideProps) {
-    const { text, name, position, img } = data
-
     return (
         <div className={styles.container}>
             <div className={styles.name}>
                 <Typography color={TypographyColor.INVERTED} variant={TypographyVariant.H4} isBold>
-                    {name}
+                    {data.name}
                 </Typography>
-                <Typography color={TypographyColor.LIGHT_GRAY}>{position}</Typography>
+                <Typography color={TypographyColor.LIGHT_GRAY}>{data.company}</Typography>
             </div>
             <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
-            <img src={img} alt="avatar" className={styles.avatar} />
+            <img src={urlFor(data.imageUrl).url()} alt="avatar" className={styles.avatar} />
             <Typography className={styles.testimonial} color={TypographyColor.INVERTED}>
-                {text}
+                {data.feedback}
             </Typography>
         </div>
     )

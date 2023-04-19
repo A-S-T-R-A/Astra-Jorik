@@ -1,4 +1,6 @@
 import styles from "./Testimoials.module.css"
+import { useContext } from "preact/hooks"
+import { Context } from "app/ContextProvider"
 import { heroImg } from "shared/constants/home"
 import { SectionTitle } from "shared/ui/SectionTitle/SectionTitle"
 import { TypographyColor } from "shared/ui/Typography/Typography"
@@ -11,16 +13,17 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import { TestimoialSlide } from "./TestimonialSlide/TestimonialSlide"
-import { testimonialsData } from "shared/constants/testimonials"
 
 export function Testimoials() {
+    const { reviewers, title } = useContext(Context)
+
     return (
         <div className={styles.wrapper}>
             <img src={heroImg} alt="hero banner" className={styles.img} />
-            <Epigraph className={styles.epigrpah}>Reviews</Epigraph>
+            <Epigraph className={styles.epigrpah}>{title?.[6].epigraph}</Epigraph>
             <div className={styles.container}>
                 <SectionTitle
-                    title="Testimonials"
+                    title={title?.[6].title}
                     titleColor={TypographyColor.INVERTED}
                     className={styles.title}
                 />
@@ -39,9 +42,9 @@ export function Testimoials() {
                     centeredSlides={true}
                     className={styles.swiper}
                 >
-                    {testimonialsData.map(proj => (
-                        <SwiperSlide key={proj.id} className={styles.slide}>
-                            <TestimoialSlide data={proj} />
+                    {reviewers?.map((reviewer, index) => (
+                        <SwiperSlide key={index} className={styles.slide}>
+                            <TestimoialSlide data={reviewer} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

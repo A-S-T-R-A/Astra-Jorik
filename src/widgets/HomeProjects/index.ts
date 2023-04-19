@@ -1,3 +1,1 @@
-import { HomeProjects } from "./HomeProjects"
-
-export { HomeProjects }
+export { HomeProjects } from "./ui/HomeProjects"

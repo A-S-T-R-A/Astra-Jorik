@@ -1,23 +1,14 @@
-import { useState, useEffect } from "preact/hooks"
 import { Section } from "shared/ui/Section/Section"
 import styles from "./GalleryProjects.module.css"
 import projImg from "./proj.jpg"
 import { classNames } from "shared/lib/classNames"
-import { projectsData } from "shared/constants/projects"
-import { urlFor, client } from "../../client"
+import { useState, useEffect, useContext } from "preact/hooks"
+import { urlFor } from "../../shared/lib/client"
+import { Context } from "app/ContextProvider"
 
 export function GalleryProjects() {
     const [selectedImg, setSelectedImg] = useState("")
-    const [photos, setPhotos] = useState<Array<any>>([])
-
-    useEffect(() => {
-        const query = "*[_type == 'gallery']"
-
-        client.fetch(query).then(data => {
-            setPhotos(data)
-            console.log(photos)
-        })
-    }, [])
+    const { photos } = useContext(Context)
 
     useEffect(() => {
         document.body.style.overflow = selectedImg ? "hidden" : ""
@@ -33,7 +24,7 @@ export function GalleryProjects() {
 
     return (
         <Section containerClassName={styles.container}>
-            {photos.map((photo, index) => {
+            {photos?.map((photo, index) => {
                 return (
                     <div key={index} className={styles.slide}>
                         <img

@@ -1,6 +1,6 @@
 import styles from "./Hero.module.css"
 import { useContext } from "preact/hooks"
-import { urlFor } from "../../../client"
+import { urlFor } from "../../../shared/lib/client"
 import { Context } from "app/ContextProvider"
 
 export function Hero() {

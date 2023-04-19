@@ -1,6 +1,5 @@
 import { PageTitle } from "widgets/PageTitle"
 import { navigationData } from "../model"
-import { text } from "shared/constants/about"
 import { About } from "widgets/About"
 import { ContactUs } from "widgets/ContactUs"
 import { Services } from "widgets/Services"

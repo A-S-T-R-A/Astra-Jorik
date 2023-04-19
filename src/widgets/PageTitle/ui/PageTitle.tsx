@@ -3,8 +3,7 @@ import styles from "./PageTitle.module.css"
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import { Fragment } from "preact/jsx-runtime"
 import { route, useRouter } from "preact-router"
-import { useContext, useEffect, useState } from "preact/hooks"
-import { urlFor, client } from "../../../client"
+import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
 
 interface PageTitle {
@@ -14,13 +13,13 @@ interface PageTitle {
 export function PageTitle(props: PageTitle) {
     const { navigation } = props
 
-    const { home } = useContext(Context)
+    const { title } = useContext(Context)
 
     return (
         <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
-            {!!home && (
+            {!!title && (
                 <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
-                    {home}
+                    {title[1].title}
                 </Typography>
             )}
 

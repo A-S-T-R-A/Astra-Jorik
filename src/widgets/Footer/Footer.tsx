@@ -1,14 +1,15 @@
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
-import { SiFoodpanda } from "react-icons/si"
 import styles from "./Footer.module.css"
-import { socialIcons } from "shared/constants/links/socialIcons/socialIcons"
+import { useContext } from "preact/hooks"
 import { linksData } from "shared/constants/links/menuLinks/linksData"
-import { contacts } from "shared/constants/footer/contactLinks/link"
 import { AppLink } from "shared/ui/AppLink/AppLink"
 import { route } from "preact-router"
 import { projectsData } from "shared/constants/projects"
+import { Context } from "app/ContextProvider"
+import { urlFor } from "../../shared/lib/client"
 
 export function Footer() {
+    const { contacts, socialIcons } = useContext(Context)
     const currentYear = new Date().getFullYear()
 
     function clickHandler() {
@@ -29,7 +30,6 @@ export function Footer() {
                         variant={TypographyVariant.H2}
                         onClick={clickHandler}
                     >
-                        <SiFoodpanda />
                         PandaReno
                     </Typography>
                     <Typography color={TypographyColor.DARK_GRAY}>
@@ -41,11 +41,20 @@ export function Footer() {
                     <Typography variant={TypographyVariant.P} isBold className={styles.title}>
                         Quick Contact:
                     </Typography>
-                    {contacts.map(item => {
-                        return (
-                            <AppLink to={item.link} className={styles.links}>
-                                {item.title}
-                            </AppLink>
+                    {contacts?.map(item => {
+                        const { phone, email } = item
+                        const digits = phone?.replace(/\D/g, "")
+                        const phoneNumber = `tel:${digits}`
+                        const mail = `mailto:${email}`
+
+                        return item.contactType === "phone" ? (
+                            <a href={phoneNumber} className={styles.links}>
+                                {item.phone}
+                            </a>
+                        ) : (
+                            <a href={mail} className={styles.links}>
+                                {email}
+                            </a>
                         )
                     })}
                 </div>
@@ -53,10 +62,10 @@ export function Footer() {
                     <Typography variant={TypographyVariant.P} isBold className={styles.title}>
                         Projects:
                     </Typography>
-                    {projectsData.slice(0, 4).map(proj => {
-                        const { id, linkTitle } = proj
+                    {projectsData.slice(0, 5).map(proj => {
+                        const { linkTitle } = proj
                         return (
-                            <AppLink to={`/projects/${id}`} className={styles.links}>
+                            <AppLink to={`/gallery`} className={styles.links}>
                                 {linkTitle}
                             </AppLink>
                         )
@@ -77,16 +86,19 @@ export function Footer() {
                 <div className={styles.copyright}>
                     <Typography>© {currentYear} All Rights Reserved</Typography>
                     <div className={styles.socialIcons}>
-                        {socialIcons.map((item, index) => {
+                        {socialIcons?.map((item, index) => {
                             return (
                                 <a
                                     key={index}
                                     className={styles.item}
-                                    href={item.link}
+                                    href={item.address}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    {item.icon}
+                                    <img
+                                        src={urlFor(item.icon).url()}
+                                        style={{ width: "20px", minWidth: "20px" }}
+                                    />
                                 </a>
                             )
                         })}

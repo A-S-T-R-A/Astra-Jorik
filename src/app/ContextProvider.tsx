@@ -1,23 +1,65 @@
-import { createContext } from "preact"
-import { usePageTitleSlice } from "widgets/PageTitle"
-import { ComponentChildren } from "preact"
-import { useHeroSlice } from "widgets/Hero"
-import { useAboutSlice } from "widgets/About/model/useAboutSlice"
+import { createContext, ComponentChildren } from "preact"
+import {
+    useHeroSlice,
+    useAboutSlice,
+    useServicesSlice,
+    useProjectRowSlice,
+    useTestimonialsSlice,
+    useContactSlice,
+    useLogoSlice,
+    useHeaderContactsSlice,
+    useGallerySlice,
+} from "shared/model/slice"
+import { useTitleSlice } from "shared/model/slice/useTitleSlice"
 
 export interface AppContext {
-    home?: string | undefined
-    hero?: any | undefined
-    about?: any | undefined
-    ourSkills?: any | undefined
+    title?: any
+    hero?: any
+    about?: any
+    ourSkills?: any
+    services?: any
+    projects?: any[]
+    reviewers?: any[]
+    contacts?: any[]
+    logo?: any
+    mobile?: any
+    socialIcons?: any[]
+    photos?: any[]
     children?: ComponentChildren
 }
 
 export const Context = createContext<AppContext>({})
 
 export function ContextProvider({ children }: AppContext) {
-    const { home } = usePageTitleSlice()
     const { hero } = useHeroSlice()
     const { about, ourSkills } = useAboutSlice()
+    const { services } = useServicesSlice()
+    const { projects } = useProjectRowSlice()
+    const { reviewers } = useTestimonialsSlice()
+    const { contacts } = useContactSlice()
+    const { logo } = useLogoSlice()
+    const { mobile, socialIcons } = useHeaderContactsSlice()
+    const { photos } = useGallerySlice()
+    const { title } = useTitleSlice()
 
-    return <Context.Provider value={{ home, hero, about, ourSkills }}>{children}</Context.Provider>
+    return (
+        <Context.Provider
+            value={{
+                hero,
+                about,
+                ourSkills,
+                services,
+                projects,
+                reviewers,
+                contacts,
+                logo,
+                mobile,
+                socialIcons,
+                photos,
+                title,
+            }}
+        >
+            {children}
+        </Context.Provider>
+    )
 }

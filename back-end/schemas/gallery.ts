@@ -1,21 +1,11 @@
 export default {
-  name: 'about',
+  name: 'gallery',
   type: 'document',
-  title: 'About',
+  title: 'Gallery',
   fields: [
-    {
-      name: 'epigraph',
-      title: 'Epigraph',
-      type: 'string',
-    },
     {
       name: 'title',
       title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'description',
-      title: 'Description',
       type: 'string',
     },
     {

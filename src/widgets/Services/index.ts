@@ -1,3 +1,3 @@
-import { Services } from "./Services"
+import { Services } from "./ui/Services"
 
 export { Services }

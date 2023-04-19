@@ -1,8 +1,13 @@
 export default {
-  name: 'gallery',
+  name: 'about',
   type: 'document',
-  title: 'Gallery',
+  title: 'About',
   fields: [
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+    },
     {
       name: 'imageUrl',
       title: 'ImgUrl',

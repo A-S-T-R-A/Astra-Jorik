@@ -1,5 +1,4 @@
 import Router from "preact-router"
-import "./index.css"
 import { Header } from "widgets/Header"
 import { AboutPage } from "pages/AboutPage"
 import { ProjectsPage } from "pages/ProjectsPage"
@@ -10,6 +9,7 @@ import { HomePage } from "pages/HomePage"
 import { ProjectDetailsPage } from "pages/ProjectDetailsPage"
 import { NotFoundPage } from "pages/NotFoundPage"
 import { GalleryPage } from "pages/GalleryPage"
+import "./index.css"
 
 export function App() {
     return (
