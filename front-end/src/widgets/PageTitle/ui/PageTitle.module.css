@@ -31,6 +31,29 @@
     cursor: default;
 }
 
+.skeletonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 148px;
+    grid-area: title;
+}
+
+.skeletonContainer>:first-child {
+    width: 70%;
+    height: 36px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.skeletonContainer>:last-child {
+    width: 60%;
+    border-radius: 5px;
+    height: 36px;
+}
+
 @media(min-width:900px) {
     .container {
         align-items: center;
@@ -44,5 +67,10 @@
 
     .title {
         text-align: start;
+    }
+
+    .skeletonContainer {
+        align-items: start;
+        min-height: 40px;
     }
 }

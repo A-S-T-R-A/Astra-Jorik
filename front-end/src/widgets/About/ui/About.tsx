@@ -6,39 +6,45 @@ import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 import { urlFor } from "shared/lib/client"
 import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
+import { AboutSkeleton } from "./AboutSkeleton/AboutSkeleton"
 
 export function About() {
     const { about, ourSkills, title } = useContext(Context)
 
-    return (
-        <Section>
-            <div className={styles.container}>
-                <div className={styles.firstSection}>
-                    <SectionTitle epigraph={title?.[4].epigraph} title={title?.[4].title} />
-                    <Typography>{about.description}</Typography>
-                    <ProjectLink to="/projects" className={styles.link}>
-                        our project
-                    </ProjectLink>
+    if (about) {
+        return (
+            <Section>
+                <div className={styles.container}>
+                    <div className={styles.firstSection}>
+                        <SectionTitle epigraph={title?.[4]?.epigraph} title={title?.[4]?.title} />
+                        <Typography>{about?.description}</Typography>
+                        <ProjectLink to="/projects" className={styles.link}>
+                            our project
+                        </ProjectLink>
+                    </div>
+                    {about?.imageUrl && (
+                        <img
+                            src={urlFor(about?.imageUrl).url()}
+                            alt="about"
+                            className={styles.images1}
+                        />
+                    )}
+                    {ourSkills?.imageUrl && (
+                        <img
+                            src={urlFor(ourSkills?.imageUrl).url()}
+                            alt="facts"
+                            className={styles.images2}
+                        />
+                    )}
+
+                    <div className={styles.secondSection}>
+                        <SectionTitle epigraph={title?.[0]?.epigraph} title={title?.[0]?.title} />
+                        <Typography>{ourSkills?.description}</Typography>
+                    </div>
                 </div>
-                {!!about && (
-                    <img
-                        src={urlFor(about.imageUrl)?.url()}
-                        alt="about"
-                        className={styles.images1}
-                    />
-                )}
-                {!!ourSkills && (
-                    <img
-                        src={urlFor(ourSkills.imageUrl).url()}
-                        alt="facts"
-                        className={styles.images2}
-                    />
-                )}
-                <div className={styles.secondSection}>
-                    <SectionTitle epigraph={title?.[0].epigraph} title={title?.[0].title} />
-                    <Typography>{ourSkills.description}</Typography>
-                </div>
-            </div>
-        </Section>
-    )
+            </Section>
+        )
+    } else {
+        return <AboutSkeleton />
+    }
 }

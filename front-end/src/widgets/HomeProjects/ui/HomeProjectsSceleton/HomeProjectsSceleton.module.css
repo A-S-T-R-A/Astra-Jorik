@@ -1,0 +1,72 @@
+.wrapper {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-areas:
+        ". epigraph ."
+        ". title ."
+        "projects projects projects"
+        ". link .";
+    row-gap: 30px;
+}
+
+.epigraph {
+    width: 50%;
+    height: 18px;
+    grid-area: epigraph;
+}
+
+.title {
+    width: 80%;
+    height: 28px;
+    grid-area: title;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    padding: 0 20px;
+    user-select: none;
+}
+
+.slide {
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slide>:last-child {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0.3;
+    border-radius: 5px;
+
+}
+
+.img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: -4px;
+    filter: brightness(70%);
+    transition: all 0.2s ease;
+    border-radius: 5px;
+}
+
+@media(min-width: 740px) {
+    .wrapper {
+        grid-template-columns: 1fr 20px minmax(0, 580px) minmax(0, 580px) 20px 1fr;
+        grid-template-areas:
+            ". . epigraph . . . "
+            ". . title . . . "
+            "projects projects projects projects projects projects";
+    }
+}

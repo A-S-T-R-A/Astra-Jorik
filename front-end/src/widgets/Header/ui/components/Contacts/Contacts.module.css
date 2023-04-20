@@ -65,7 +65,7 @@
     font-size: var(--font-size-h5);
     font-weight: 400;
     margin-right: 10px;
-    color: var(--color-base)
+    color: var(--color-base);
 }
 
 .phone {

@@ -6,20 +6,25 @@ import { Typography, TypographyVariant } from "shared/ui/Typography/Typography"
 import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
 import { urlFor } from "shared/lib/client"
+import { ServicesSkeleton } from "./ServicesSkeleton/ServicesSkeleton"
 
 export function Services() {
-    const { title } = useContext(Context)
+    const { title, services } = useContext(Context)
 
-    return (
-        <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
-            <SectionTitle
-                title={title?.[2].title}
-                epigraph={title?.[2].epigraph}
-                className={styles.title}
-            />
-            <ServicesList />
-        </Section>
-    )
+    if (services) {
+        return (
+            <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
+                <SectionTitle
+                    title={title?.[2].title}
+                    epigraph={title?.[2].epigraph}
+                    className={styles.title}
+                />
+                <ServicesList />
+            </Section>
+        )
+    } else {
+        return <ServicesSkeleton />
+    }
 }
 
 interface ServicesListProps {

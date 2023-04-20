@@ -5,6 +5,7 @@ import { Fragment } from "preact/jsx-runtime"
 import { route, useRouter } from "preact-router"
 import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
+import { Skeleton } from "shared/ui/Skeleton/Skeleton"
 
 interface PageTitle {
     navigation: BreadcrupmsNavigation[]
@@ -17,10 +18,15 @@ export function PageTitle(props: PageTitle) {
 
     return (
         <Section wrapperClassName={styles.wrapper} containerClassName={styles.container}>
-            {!!title && (
+            {title ? (
                 <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
-                    {title[1].title}
+                    {title?.[1].title}
                 </Typography>
+            ) : (
+                <div className={styles.skeletonContainer}>
+                    <Skeleton />
+                    <Skeleton />
+                </div>
             )}
 
             <Breadcrupms navigation={navigation} />

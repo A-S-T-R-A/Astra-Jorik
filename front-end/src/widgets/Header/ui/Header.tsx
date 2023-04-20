@@ -7,6 +7,7 @@ import { Context } from "app/ContextProvider"
 import { Burger } from "./components/Burger/Burger"
 import { Contacts } from "./components/Contacts/Contacts"
 import styles from "./Header.module.css"
+import { Skeleton } from "shared/ui/Skeleton/Skeleton"
 
 export function Header() {
     const [navbarVisible, setNavbarVisible] = useState(false)
@@ -36,12 +37,14 @@ export function Header() {
         <header className={wrapperClassName}>
             <div className={styles.container}>
                 <div className={styles.logoContainer} onClick={clickHandler}>
-                    {!!logo && (
+                    {logo ? (
                         <img
                             src={urlFor(logo?.imageUrl).url()}
                             alt="logo"
                             className={styles.logo}
                         />
+                    ) : (
+                        <Skeleton style={{ width: "50px", borderRadius: "50px" }} />
                     )}
                 </div>
 
