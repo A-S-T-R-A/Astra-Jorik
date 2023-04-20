@@ -17,7 +17,7 @@ export function About() {
                     <SectionTitle epigraph={title?.[4].epigraph} title={title?.[4].title} />
                     <Typography>{about.description}</Typography>
                     <ProjectLink to="/projects" className={styles.link}>
-                        our projects
+                        our project
                     </ProjectLink>
                 </div>
                 {!!about && (
