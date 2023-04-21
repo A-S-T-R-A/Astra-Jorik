@@ -131,3 +131,13 @@
         margin-bottom: 50px;
     }
 }
+
+.title,
+.rating,
+.avatar,
+.testimonial,
+.name>:first-child,
+.name>:last-child {
+    background: linear-gradient(110deg, #3b3b3b 8%, #525252 18%, #3b3b3b 33%);
+    background-size: 200% 100%;
+}

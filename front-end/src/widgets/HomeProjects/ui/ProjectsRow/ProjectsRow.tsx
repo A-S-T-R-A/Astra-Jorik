@@ -3,26 +3,32 @@ import { classNames } from "shared/lib/classNames"
 import styles from "./ProjectsRow.module.css"
 import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
-import "./ProjectRow.css"
-import projImg from "./proj.jpg"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper"
+import placeholder from "shared/constants/placholder.png"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
+import "./ProjectRow.css"
 import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
 import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 import { route } from "preact-router"
 import { urlFor } from "shared/lib/client"
+import { Skeleton } from "shared/ui/Skeleton/Skeleton"
 
 interface ProjectsRow {
     className?: string
 }
 
 export function ProjectsRow({ className }: ProjectsRow) {
+    const [loading, setLoading] = useState(true)
     const [hovered, setHovered] = useState(-1)
     const { projects } = useContext(Context)
+
+    const handleImageLoad = () => {
+        setLoading(false)
+    }
 
     function clickHandler() {
         route(`/gallery`)
@@ -66,7 +72,8 @@ export function ProjectsRow({ className }: ProjectsRow) {
                             onClick={clickHandler}
                         >
                             <img
-                                src={urlFor(proj.imageUrl).url() || projImg}
+                                onLoad={handleImageLoad}
+                                src={urlFor(proj.imageUrl).url() || placeholder}
                                 alt=""
                                 className={classNames(
                                     styles.img,

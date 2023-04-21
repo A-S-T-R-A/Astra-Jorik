@@ -1,3 +1,4 @@
+import { ContactUsPage } from "pages/ContactUsPage"
 import { useEffect } from "preact/hooks"
 
 export function AdminPage(props: { path: string }) {
@@ -5,5 +6,5 @@ export function AdminPage(props: { path: string }) {
         window.location.href = "https://pandareno.sanity.studio/"
     }, [])
 
-    return <div />
+    return <ContactUsPage path="/contact" />
 }
