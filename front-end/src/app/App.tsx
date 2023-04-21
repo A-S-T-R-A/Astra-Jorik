@@ -9,6 +9,7 @@ import { HomePage } from "pages/HomePage"
 import { ProjectDetailsPage } from "pages/ProjectDetailsPage"
 import { NotFoundPage } from "pages/NotFoundPage"
 import { GalleryPage } from "pages/GalleryPage"
+import { AdminPage } from "pages/AdminPage/AdminPage"
 import "./index.css"
 
 export function App() {
@@ -24,6 +25,7 @@ export function App() {
                         <ProjectsPage path="/projects" />
                         <ProjectDetailsPage path="/projects/:id" />
                         <ContactUsPage path="/contact" />
+                        <AdminPage path="/admin" />
                         <NotFoundPage default />
                     </Router>
                 </div>
