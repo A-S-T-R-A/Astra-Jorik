@@ -7,7 +7,7 @@ import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
 
 export function HomeProjects() {
-    const { title, projects } = useContext(Context)
+    const { title } = useContext(Context)
 
     return (
         <div className={styles.wrapper}>

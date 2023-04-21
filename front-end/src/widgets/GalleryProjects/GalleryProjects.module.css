@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    height: 922px;
+    height: 922px
 }
 
 @media (min-width: 480px) {

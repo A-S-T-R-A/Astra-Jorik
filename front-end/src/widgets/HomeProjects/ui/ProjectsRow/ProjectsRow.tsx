@@ -16,6 +16,7 @@ import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 import { route } from "preact-router"
 import { urlFor } from "shared/lib/client"
 import { Skeleton } from "shared/ui/Skeleton/Skeleton"
+import { AsyncImage } from "shared/ui/AsyncImage/AsyncImage"
 
 interface ProjectsRow {
     className?: string
@@ -72,31 +73,9 @@ export function ProjectsRow({ className }: ProjectsRow) {
                                   onMouseLeave={() => setHovered(-1)}
                                   onClick={clickHandler}
                               >
-                                  {!!loading && (
-                                      <>
-                                          <Skeleton
-                                              style={{
-                                                  width: "100%",
-                                                  height: "300px",
-                                                  position: "absolute",
-                                                  zIndex: "8",
-                                              }}
-                                          />
-                                          <img
-                                              src={placeholder}
-                                              style={{
-                                                  zIndex: "9",
-                                                  position: "absolute",
-                                                  height: "300px",
-                                                  objectFit: "contain",
-                                              }}
-                                          />
-                                      </>
-                                  )}
-                                  <img
-                                      onLoad={handleImageLoad}
+                                  <AsyncImage
                                       src={urlFor(proj.imageUrl).url() || placeholder}
-                                      alt=""
+                                      alt="project"
                                       className={classNames(
                                           styles.img,
                                           { [styles.imgBlurred]: index === hovered },
