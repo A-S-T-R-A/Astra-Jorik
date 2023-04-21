@@ -34,12 +34,23 @@
     margin-top: 30px;
 }
 
-.images1 {
+.images1,
+.placeholder1 {
     grid-area: img1;
 }
 
-.images2 {
+.placeholder1,
+.placeholder2 {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: contain;
+}
+
+.images2,
+.placeholder2 {
     grid-area: img2;
+
 }
 
 .images1,
@@ -48,6 +59,7 @@
     height: fit-content;
     justify-self: start;
     object-fit: cover;
+    border-radius: 3px;
 }
 
 

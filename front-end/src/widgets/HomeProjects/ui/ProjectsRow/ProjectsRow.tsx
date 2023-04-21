@@ -62,46 +62,88 @@ export function ProjectsRow({ className }: ProjectsRow) {
                     },
                 }}
             >
-                {projects?.map((proj, index) => {
-                    return (
-                        <SwiperSlide
-                            key={index}
-                            className={styles.slide}
-                            onMouseEnter={() => setHovered(index)}
-                            onMouseLeave={() => setHovered(-1)}
-                            onClick={clickHandler}
-                        >
-                            <img
-                                onLoad={handleImageLoad}
-                                src={urlFor(proj.imageUrl).url() || placeholder}
-                                alt=""
-                                className={classNames(
-                                    styles.img,
-                                    { [styles.imgBlurred]: index === hovered },
-                                    []
-                                )}
-                            />
-                            <div className={styles.infoOverlay}>
-                                <div className={styles.slideInfo}>
-                                    <Typography
-                                        variant={TypographyVariant.H3}
-                                        color={TypographyColor.INVERTED}
-                                        className={styles.slideText}
-                                    >
-                                        {proj.title}
-                                    </Typography>
-                                    <ProjectLink
-                                        to={`/gallery`}
-                                        color={TypographyColor.INVERTED}
-                                        variant={TypographyVariant.SMALL}
-                                    >
-                                        view project
-                                    </ProjectLink>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    )
-                })}
+                {projects
+                    ? projects?.map((proj, index) => {
+                          return (
+                              <SwiperSlide
+                                  key={index}
+                                  className={styles.slide}
+                                  onMouseEnter={() => setHovered(index)}
+                                  onMouseLeave={() => setHovered(-1)}
+                                  onClick={clickHandler}
+                              >
+                                  {!!loading && (
+                                      <>
+                                          <Skeleton
+                                              style={{
+                                                  width: "100%",
+                                                  height: "300px",
+                                                  position: "absolute",
+                                                  zIndex: "8",
+                                              }}
+                                          />
+                                          <img
+                                              src={placeholder}
+                                              style={{
+                                                  zIndex: "9",
+                                                  position: "absolute",
+                                                  height: "300px",
+                                                  objectFit: "contain",
+                                              }}
+                                          />
+                                      </>
+                                  )}
+                                  <img
+                                      onLoad={handleImageLoad}
+                                      src={urlFor(proj.imageUrl).url() || placeholder}
+                                      alt=""
+                                      className={classNames(
+                                          styles.img,
+                                          { [styles.imgBlurred]: index === hovered },
+                                          []
+                                      )}
+                                  />
+                                  <div className={styles.infoOverlay}>
+                                      <div className={styles.slideInfo}>
+                                          <Typography
+                                              variant={TypographyVariant.H3}
+                                              color={TypographyColor.INVERTED}
+                                              className={styles.slideText}
+                                          >
+                                              {proj.title}
+                                          </Typography>
+                                          <ProjectLink
+                                              to={`/gallery`}
+                                              color={TypographyColor.INVERTED}
+                                              variant={TypographyVariant.SMALL}
+                                          >
+                                              view project
+                                          </ProjectLink>
+                                      </div>
+                                  </div>
+                              </SwiperSlide>
+                          )
+                      })
+                    : [1, 2, 3, 4, 5].map(item => (
+                          <SwiperSlide key={item} className={styles.slide}>
+                              <Skeleton
+                                  style={{
+                                      width: "100%",
+                                      height: "300px",
+                                      position: "absolute",
+                                  }}
+                              />
+                              <img
+                                  src={placeholder}
+                                  style={{
+                                      zIndex: "1",
+                                      position: "relative",
+                                      height: "300px",
+                                      objectFit: "contain",
+                                  }}
+                              />
+                          </SwiperSlide>
+                      ))}
             </Swiper>
         </div>
     )
