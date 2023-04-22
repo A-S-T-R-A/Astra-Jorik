@@ -25,12 +25,12 @@ export function About() {
                         </ProjectLink>
                     </div>
                     <AsyncImage
-                        src={urlFor(about?.imageUrl).url() || placeHolder}
+                        src={urlFor(about?.imageUrl)?.url()}
                         alt="about"
                         className={styles.images1}
                     />
                     <AsyncImage
-                        src={urlFor(ourSkills?.imageUrl).url() || placeHolder}
+                        src={urlFor(ourSkills?.imageUrl)?.url()}
                         alt="facts"
                         className={styles.images2}
                     />

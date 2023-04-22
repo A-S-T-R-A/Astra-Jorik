@@ -12,22 +12,8 @@ export const client = createClient({
 
 const builder = imageUrlBuilder(client)
 
-export const urlFor = (source: string) => builder.image(source)
-
-export const useImageUrl = (source: string) => {
-    const [loading, setLoading] = useState(true)
-    const [url, setUrl] = useState("")
-
-    useEffect(() => {
-        const getImageUrl = async () => {
-            setLoading(true)
-            const imageUrl = await builder.image(source).url()
-            setUrl(imageUrl)
-            setLoading(false)
-        }
-
-        getImageUrl()
-    }, [source])
-
-    return { loading, url }
+export const urlFor = (source: string) => {
+    if (source) {
+        return builder.image(source)
+    }
 }

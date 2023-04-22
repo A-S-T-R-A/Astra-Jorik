@@ -1,11 +1,24 @@
 .imageContainer {
     position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.placeholderError {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
 }
 
 .placeholder {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: var(--modal-z-index);
     object-fit: contain;
+    z-index: var(--modal-z-index);
+
+}
+
+.opacity {
+    opacity: 0 !important;
 }

@@ -8,17 +8,14 @@ import placeHolder from "shared/constants/placholder.png"
 
 export function Hero() {
     const { hero } = useContext(Context)
-    if (hero) {
-        return (
-            <div className={styles.wrapper}>
-                <AsyncImage
-                    src={urlFor(hero?.imageUrl)?.url() || placeHolder}
-                    alt="hero banner"
-                    className={styles.img}
-                />
-            </div>
-        )
-    } else {
-        return <HeroSkeleton />
-    }
+
+    return (
+        <div className={styles.wrapper}>
+            <AsyncImage
+                src={urlFor(hero?.imageUrl)?.url()}
+                alt="hero banner"
+                className={styles.img}
+            />
+        </div>
+    )
 }
