@@ -22,10 +22,9 @@ export function GalleryProjects() {
     function handleClose() {
         setSelectedImg("")
     }
-
     return (
         <Section containerClassName={styles.container}>
-            {photos ? (
+            {!!photos?.length ? (
                 photos.map((photo, index) => (
                     <div key={index} className={styles.slide}>
                         <AsyncImage
