@@ -5,6 +5,7 @@
 }
 
 .placeholderError {
+    position: absolute;
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -12,7 +13,7 @@
 }
 
 .placeholderImage {
-    opacity: 0;
+    background: black;
 }
 
 .placeholder {

@@ -30,8 +30,13 @@ export function AsyncImage(props: AsyncImageProps) {
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
-    function handleImageLoad() {
+    function loadHandler() {
         setIsLoading(false)
+    }
+
+    function errorHandler() {
+        setIsLoading(false)
+        setIsError(true)
     }
 
     return (
@@ -58,10 +63,8 @@ export function AsyncImage(props: AsyncImageProps) {
             )}
 
             <img
-                onLoad={handleImageLoad}
-                onError={() => {
-                    setIsError(true)
-                }}
+                onLoad={loadHandler}
+                onError={errorHandler}
                 className={classNames(
                     styles.mainImage,
                     {
