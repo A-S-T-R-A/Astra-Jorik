@@ -23,13 +23,8 @@ interface ProjectsRow {
 }
 
 export function ProjectsRow({ className }: ProjectsRow) {
-    const [loading, setLoading] = useState(true)
     const [hovered, setHovered] = useState(-1)
     const { projects } = useContext(Context)
-
-    const handleImageLoad = () => {
-        setLoading(false)
-    }
 
     function clickHandler() {
         route(`/gallery`)

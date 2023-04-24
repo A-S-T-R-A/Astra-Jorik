@@ -9,7 +9,7 @@ import { Context } from "app/ContextProvider"
 import { urlFor } from "shared/lib/client"
 
 export function Footer() {
-    const { contacts, socialIcons } = useContext(Context)
+    const { contacts, socialIcons, projects } = useContext(Context)
     const currentYear = new Date().getFullYear()
 
     function clickHandler() {
@@ -62,11 +62,11 @@ export function Footer() {
                     <Typography variant={TypographyVariant.P} isBold className={styles.title}>
                         Projects:
                     </Typography>
-                    {projectsData.slice(0, 5).map(proj => {
-                        const { linkTitle } = proj
+                    {projects?.slice(0, 4).map(proj => {
+                        const { title } = proj
                         return (
                             <AppLink to={`/gallery`} className={styles.links}>
-                                {linkTitle}
+                                {title}
                             </AppLink>
                         )
                     })}
