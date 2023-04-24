@@ -17,12 +17,10 @@
     height: 100%;
     object-fit: contain;
     z-index: var(--modal-z-index);
-    border: 1px solid green;
 }
 
 .mainImage {
     object-fit: contain;
-    border: 1px solid greenyellow;
 }
 
 .opacity {

@@ -16,7 +16,7 @@ import { ProjectLink } from "shared/ui/ProjectLink/ProjectLink"
 import { route } from "preact-router"
 import { urlFor } from "shared/lib/client"
 import { Skeleton } from "shared/ui/Skeleton/Skeleton"
-import { AsyncImage } from "shared/ui/AsyncImage/AsyncImage"
+import { AsyncImage, ImageFit } from "shared/ui/AsyncImage/AsyncImage"
 
 interface ProjectsRow {
     className?: string
@@ -74,7 +74,8 @@ export function ProjectsRow({ className }: ProjectsRow) {
                                   onClick={clickHandler}
                               >
                                   <AsyncImage
-                                      src={urlFor(proj.imageUrl).url() || placeholder}
+                                      objectFit={ImageFit.COVER}
+                                      src={urlFor(proj.imageUrl)?.url()}
                                       alt="project"
                                       className={classNames(
                                           styles.img,

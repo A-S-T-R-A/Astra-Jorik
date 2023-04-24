@@ -26,7 +26,6 @@
 .img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
     margin-bottom: -4px;
     filter: brightness(50%);
     transition: filter 0.2s ease;

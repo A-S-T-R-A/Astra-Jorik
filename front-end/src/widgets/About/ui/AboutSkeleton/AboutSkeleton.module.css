@@ -1,23 +1,10 @@
 .container {
-    display: grid;
-    row-gap: 20px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-        "about"
-        "img1"
-        "facts"
-        "img2";
-}
-
-.firstSection {
-    width: 100%;
+    min-width: 100%;
     min-height: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-area: about;
 }
 
 .epigraph {
@@ -33,75 +20,13 @@
 }
 
 .description {
-    width: 95%;
+    width: 100%;
     height: 16px;
     margin-bottom: 12px;
 }
 
-.firstSection>:last-child,
-.secondSection>:last-child {
+.container>:last-child {
     width: 65%;
     height: 16px;
     margin-bottom: 20px;
-}
-
-.secondSection {
-    height: fit-content;
-    grid-area: facts;
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.img1,
-.img2 {
-    position: relative;
-}
-
-.img1>:last-child,
-.img2>:last-child {
-    position: absolute;
-    opacity: 0.3;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.images1 {
-    grid-area: img1;
-}
-
-.images2 {
-    grid-area: img2;
-}
-
-.images1,
-.images2 {
-    width: 100%;
-    height: fit-content;
-    justify-self: start;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-
-@media (min-width: 768px) {
-    .container {
-        column-gap: 5vw;
-        row-gap: 30px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
-            "about img1"
-            "img2 facts";
-    }
-
-    .images1,
-    .images2 {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 }

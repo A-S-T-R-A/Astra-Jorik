@@ -18,6 +18,10 @@
     grid-area: about;
 }
 
+.grid1 {
+    grid-area: about;
+}
+
 .secondSection {
     height: fit-content;
     grid-area: facts;
@@ -28,25 +32,27 @@
     justify-content: center;
 }
 
+.grid2 {
+    grid-area: facts;
+}
+
 .secondSection>div:last-child,
 .firstSection>div:last-child,
 .firstSection>div:nth-child(2) {
     margin-top: 30px;
 }
 
-.images1,
-.placeholder1 {
+.image1 {
     grid-area: img1;
 }
 
-.images2,
-.placeholder2 {
+.image2 {
     grid-area: img2;
 
 }
 
-.images1,
-.images2 {
+.image1,
+.image2 {
     width: 100%;
     height: 100%;
     justify-self: start;
@@ -63,12 +69,5 @@
         grid-template-areas:
             "about img1"
             "img2 facts";
-    }
-
-    .images1,
-    .images2 {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 }

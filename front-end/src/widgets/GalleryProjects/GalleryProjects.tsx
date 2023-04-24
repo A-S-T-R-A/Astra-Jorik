@@ -6,7 +6,7 @@ import { useState, useEffect, useContext } from "preact/hooks"
 import { urlFor } from "shared/lib/client"
 import { Context } from "app/ContextProvider"
 import { GallerySkeleton } from "./GallerySkeleton/GallerySkeleton"
-import { AsyncImage } from "shared/ui/AsyncImage/AsyncImage"
+import { AsyncImage, ImageFit } from "shared/ui/AsyncImage/AsyncImage"
 
 export function GalleryProjects() {
     const [selectedImg, setSelectedImg] = useState("")
@@ -16,7 +16,7 @@ export function GalleryProjects() {
         document.body.style.overflow = selectedImg ? "hidden" : ""
     }, [selectedImg])
 
-    function handleClick(img: string) {
+    function handleClick(img: any) {
         setSelectedImg(img)
     }
 
@@ -30,10 +30,11 @@ export function GalleryProjects() {
                     return (
                         <div key={index} className={styles.slide}>
                             <AsyncImage
-                                src={urlFor(photo?.imageUrl).url() || placeholder}
+                                objectFit={ImageFit.COVER}
+                                src={urlFor(photo?.imageUrl)?.url()}
                                 alt="image"
                                 className={classNames(styles.img, {}, [])}
-                                onClick={() => handleClick(urlFor(photo?.imageUrl).url())}
+                                onClick={() => handleClick(urlFor(photo?.imageUrl)?.url())}
                             />
                         </div>
                     )
