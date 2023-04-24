@@ -15,10 +15,8 @@
     position: relative;
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: -4px;
-    filter: brightness(50%);
     z-index: 1;
-    opacity: 0.3;
     transition: filter 0.2s ease;
 }
