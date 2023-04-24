@@ -10,33 +10,47 @@ type HTMLImageAttributes = Omit<
     "onLoad" | "className" | "onError" | "src"
 >
 
+export enum ImageFit {
+    CONTAIN = "contain",
+    COVER = "cover",
+    NONE = "none",
+    FILL = "fill",
+    SCALE_DOWN = "scale-down",
+}
+
 interface AsyncImageProps extends HTMLImageAttributes {
     src?: string
     className?: string
+    objectFit?: ImageFit
 }
 
 export function AsyncImage(props: AsyncImageProps) {
-    const { src, className = "", ...otherProps } = props
+    const { src, className = "", objectFit = ImageFit.CONTAIN, ...otherProps } = props
 
-    const [isloading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
     function handleImageLoad() {
         setIsLoading(false)
     }
 
-    console.log(src)
-
     return (
         <div className={styles.imageContainer}>
-            {isloading && !isError && (
+            {isLoading && !isError && (
                 <>
                     <Skeleton className={styles.placeholder} />
                     <img src={placeholder} className={styles.placeholder} />
                 </>
             )}
 
-            {!isError && (
+            {!src && (
+                <>
+                    <Skeleton className={styles.placeholder} />
+                    <img src={placeholder} className={styles.placeholder} />
+                </>
+            )}
+
+            {isError && src && (
                 <img
                     src={placeholder}
                     className={classNames(styles.placeholderError, {}, [className])}
@@ -46,13 +60,13 @@ export function AsyncImage(props: AsyncImageProps) {
             <img
                 onLoad={handleImageLoad}
                 onError={() => {
-                    console.log("error")
                     setIsError(true)
                 }}
                 className={classNames(
-                    className,
+                    styles.mainImage,
                     {
                         [styles.opacity]: isError || src === undefined,
+                        [styles[objectFit]]: src,
                     },
                     [className]
                 )}

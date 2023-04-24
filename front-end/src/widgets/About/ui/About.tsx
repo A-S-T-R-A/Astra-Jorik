@@ -8,7 +8,7 @@ import { urlFor } from "shared/lib/client"
 import { useContext } from "preact/hooks"
 import { Context } from "app/ContextProvider"
 import { AboutSkeleton } from "./AboutSkeleton/AboutSkeleton"
-import { AsyncImage } from "shared/ui/AsyncImage/AsyncImage"
+import { AsyncImage, ImageFit } from "shared/ui/AsyncImage/AsyncImage"
 
 export function About() {
     const { about, ourSkills, title } = useContext(Context)
@@ -25,11 +25,13 @@ export function About() {
                         </ProjectLink>
                     </div>
                     <AsyncImage
+                        objectFit={ImageFit.COVER}
                         src={urlFor(about?.imageUrl)?.url()}
                         alt="about"
                         className={styles.images1}
                     />
                     <AsyncImage
+                        objectFit={ImageFit.COVER}
                         src={urlFor(ourSkills?.imageUrl)?.url()}
                         alt="facts"
                         className={styles.images2}
