@@ -13,7 +13,8 @@
 }
 
 .placeholderImage {
-    background: black;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .placeholder {
