@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "preact/compat"
-import { useState, useEffect } from "preact/hooks"
+import { useState } from "preact/hooks"
 import { Skeleton } from "../Skeleton/Skeleton"
 import placeholder from "shared/constants/placholder.png"
 import styles from "./AsyncImage.module.css"
@@ -70,8 +70,13 @@ export function AsyncImage(props: AsyncImageProps) {
                     },
                     [className]
                 )}
-                src={src || placeholder}
+                src={src}
                 {...otherProps}
+            />
+
+            <img
+                src={placeholder}
+                className={classNames(styles.placeholderImage, {}, [className])}
             />
         </div>
     )

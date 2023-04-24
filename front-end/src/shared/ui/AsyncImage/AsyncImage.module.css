@@ -11,6 +11,10 @@
     background-color: var(--color-light-gray);
 }
 
+.placeholderImage {
+    opacity: 0;
+}
+
 .placeholder {
     position: absolute;
     width: 100%;
@@ -20,6 +24,7 @@
 }
 
 .mainImage {
+    position: absolute;
     object-fit: contain;
 }
 
