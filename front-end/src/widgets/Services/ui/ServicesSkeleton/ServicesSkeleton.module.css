@@ -1,0 +1,100 @@
+.wrapper {
+    background: rgb(250, 250, 250);
+}
+
+.epigraph {
+    width: 50%;
+    height: 17px;
+    margin-bottom: 30px;
+}
+
+.title {
+    width: 70%;
+    height: 28px;
+    margin-bottom: 50px;
+}
+
+.listContainer {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "pic1" "pic2" "pic3";
+    row-gap: 40px;
+    margin-bottom: 40px;
+}
+
+.gridItem {
+    max-width: 250px;
+}
+
+.gridItem:nth-child(1) {
+    grid-area: pic1;
+}
+
+.gridItem:nth-child(2) {
+    grid-area: pic2;
+}
+
+.gridItem:nth-child(3) {
+    grid-area: pic3;
+}
+
+@media (min-width: 480px) {
+    .listContainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "pic1 pic2" "pic3 pic3";
+    }
+}
+
+@media (min-width: 820px) {
+    .listContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "pic1 pic2 pic3";
+        column-gap: 10px;
+        width: 100%;
+    }
+}
+
+.itemContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.itemInfoContainer {
+    width: 100%;
+}
+
+
+.itemTitle {
+    width: 80%;
+    height: 24px;
+    margin: 15px auto;
+}
+
+.itemImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.itemDesc {
+    margin: 6px auto;
+    width: 100%;
+    height: 16px;
+}
+
+.itemInfoContainer>:nth-child(3) {
+    width: 90%;
+}
+
+.itemInfoContainer>:nth-child(5) {
+    width: 90%;
+}
+
+.itemInfoContainer>:nth-child(6) {
+    width: 70%;
+}
