@@ -28,7 +28,7 @@ export function Contacts({ className }: ContactsProps) {
                                   rel="noreferrer"
                               >
                                   <img
-                                      src={urlFor(item.icon).url()}
+                                      src={urlFor(item.icon)?.url()}
                                       style={{ width: "20px", minWidth: "20px" }}
                                   />
                               </a>

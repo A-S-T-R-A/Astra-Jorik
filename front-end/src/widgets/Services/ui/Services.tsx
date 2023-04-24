@@ -52,7 +52,7 @@ function ListItem({ data, className }: ServicesListProps) {
 
     return (
         <div className={containerClassName}>
-            <img src={urlFor(data.imageUrl).url()} alt="" className={styles.itemImg} />
+            <img src={urlFor(data.imageUrl)?.url()} alt="" className={styles.itemImg} />
             <div className={styles.itemInfoContainer}>
                 <Typography variant={TypographyVariant.H4} className={styles.itemTitle}>
                     {service}

@@ -31,7 +31,7 @@ function ListItem({ data, className }: any) {
 
     return (
         <div className={containerClassName}>
-            <img src={urlFor(imageUrl).url()} width={45} />
+            <img src={urlFor(imageUrl)?.url()} width={45} />
             <div className={styles.itemInfoContainer}>
                 <Typography variant={TypographyVariant.H4} className={styles.itemTitle}>
                     {title}

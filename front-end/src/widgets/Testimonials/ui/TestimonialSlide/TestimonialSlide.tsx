@@ -23,7 +23,7 @@ export function TestimoialSlide({ data }: TestimoialSlideProps) {
                 <Typography color={TypographyColor.LIGHT_GRAY}>{data.company}</Typography>
             </div>
             <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
-            <img src={urlFor(data.imageUrl).url()} alt="avatar" className={styles.avatar} />
+            <img src={urlFor(data.imageUrl)?.url()} alt="avatar" className={styles.avatar} />
             <Typography className={styles.testimonial} color={TypographyColor.INVERTED}>
                 {data.feedback}
             </Typography>

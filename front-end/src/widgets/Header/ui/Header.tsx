@@ -39,7 +39,7 @@ export function Header() {
                 <div className={styles.logoContainer} onClick={clickHandler}>
                     {logo ? (
                         <img
-                            src={urlFor(logo?.imageUrl).url()}
+                            src={urlFor(logo?.imageUrl)?.url()}
                             alt="logo"
                             className={styles.logo}
                         />
