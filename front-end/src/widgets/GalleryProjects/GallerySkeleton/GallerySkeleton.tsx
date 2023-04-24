@@ -5,7 +5,7 @@ import { Skeleton } from "shared/ui/Skeleton/Skeleton"
 
 export function GallerySkeleton() {
     return (
-        <Section containerClassName={styles.container}>
+        <>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(item => {
                 return (
                     <div key={item} className={styles.slide}>
@@ -14,6 +14,6 @@ export function GallerySkeleton() {
                     </div>
                 )
             })}
-        </Section>
+        </>
     )
 }
