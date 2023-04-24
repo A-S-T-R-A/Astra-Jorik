@@ -1,0 +1,32 @@
+.container {
+    min-width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.epigraph {
+    width: 60%;
+    height: 17px;
+    margin-bottom: 20px;
+}
+
+.title {
+    width: 80%;
+    height: 26px;
+    margin-bottom: 30px;
+}
+
+.description {
+    width: 100%;
+    height: 16px;
+    margin-bottom: 12px;
+}
+
+.container>:last-child {
+    width: 65%;
+    height: 16px;
+    margin-bottom: 20px;
+}

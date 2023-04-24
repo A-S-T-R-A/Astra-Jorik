@@ -1,0 +1,144 @@
+.wrapper {
+    position: relative;
+    margin: 30px 0;
+    background-color: var(--color-black);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.title {
+    width: 250px;
+    height: 28px;
+    margin-bottom: 40px;
+}
+
+.containerTestimonials {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content min-content 20px auto;
+    grid-template-columns: 70px 1fr;
+    grid-template-areas:
+        "avatar name"
+        ". rating"
+        ". ."
+        "testimonial testimonial"
+        "testimonial testimonial"
+        "testimonial testimonial"
+        "testimonial testimonial"
+        "testimonial testimonial";
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0 auto;
+}
+
+.name {
+    height: fit-content;
+    grid-area: name;
+}
+
+.name>:first-child {
+    width: 200px;
+    height: 18px;
+    margin-bottom: 5px;
+}
+
+.name>:last-child {
+    width: 100px;
+    height: 14px;
+    margin-bottom: 5px;
+
+}
+
+.rating {
+    width: 150px;
+    height: 14px;
+    margin-bottom: 30px;
+    grid-area: rating;
+}
+
+.avatar {
+    grid-area: avatar;
+    align-self: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.testimonials {
+    grid-area: testimonial;
+}
+
+.testimonials>:nth-child(1) {
+    width: 100%;
+}
+
+.testimonials>:nth-child(2) {
+    width: 95%;
+}
+
+.testimonials>:nth-child(4) {
+    width: 90%;
+}
+
+.testimonial {
+    width: 100%;
+    height: 12px;
+    margin-bottom: 10px;
+}
+
+
+
+@media(min-width:481px) {
+    .containerTestimonials {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media(min-width:900px) {
+    .containerTestimonials {
+        z-index: 5;
+        position: relative;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: auto auto 20px auto;
+        grid-template-areas:
+            "avatar name"
+            "avatar rating"
+            ". ."
+            ". testimonial";
+        column-gap: 20px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        align-self: start;
+        margin-top: 10px;
+    }
+}
+
+@media(min-width:800px) {
+    .title {
+        margin-bottom: 50px;
+    }
+}
+
+.title,
+.rating,
+.avatar,
+.testimonial,
+.name>:first-child,
+.name>:last-child {
+    background: linear-gradient(110deg, #3b3b3b 8%, #525252 18%, #3b3b3b 33%);
+    background-size: 200% 100%;
+}

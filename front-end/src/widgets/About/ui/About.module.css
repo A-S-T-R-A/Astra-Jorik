@@ -1,0 +1,73 @@
+.container {
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "about"
+        "img1"
+        "facts"
+        "img2";
+}
+
+.firstSection {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    grid-area: about;
+}
+
+.grid1 {
+    grid-area: about;
+}
+
+.secondSection {
+    height: fit-content;
+    grid-area: facts;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid2 {
+    grid-area: facts;
+}
+
+.secondSection>div:last-child,
+.firstSection>div:last-child,
+.firstSection>div:nth-child(2) {
+    margin-top: 30px;
+}
+
+.image1 {
+    grid-area: img1;
+}
+
+.image2 {
+    grid-area: img2;
+
+}
+
+.image1,
+.image2 {
+    width: 100%;
+    height: 100%;
+    justify-self: start;
+    background-color: var(--color-light-gray);
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        column-gap: 5vw;
+        row-gap: 30px;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "about img1"
+            "img2 facts";
+    }
+}

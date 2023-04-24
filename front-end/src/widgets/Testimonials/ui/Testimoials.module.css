@@ -1,0 +1,155 @@
+.wrapper {
+    position: relative;
+    margin: 30px 0;
+    background-color: var(--color-black);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.swiper {
+    max-width: 800px;
+    cursor: grab;
+    margin-bottom: 20px;
+}
+
+.img {
+    object-fit: cover;
+    filter: brightness(22%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.epigrpah {
+    display: none;
+}
+
+.navPrev,
+.navNext {
+    position: absolute;
+    color: var(--color-white);
+    font-size: 40px;
+    top: calc(50% - 20px);
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.navPrev:hover,
+.navNext:hover {
+    color: var(--color-light-gray);
+}
+
+.navPrev {
+    left: 5px;
+    transform: translateY(-50%) translateX(-25%);
+}
+
+.navNext {
+    right: 5px;
+    transform: translateY(-50%) translateX(+25%);
+}
+
+.swiperProgressbar {
+    display: block !important;
+    background: var(--color-dark-gray) !important;
+    height: 3px !important;
+    position: absolute !important;
+    bottom: 50px !important;
+    max-width: calc(100% - 40px);
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: auto !important;
+    border-radius: 3px !important;
+}
+
+.swiperProgressbar span {
+    background: var(--color-accent) !important;
+    border-radius: 3px !important;
+}
+
+.chevrons {
+    font-size: 20px;
+}
+
+@media(min-width:481px) {
+    .navPrev {
+        left: 10px;
+    }
+
+    .navNext {
+        right: 10px;
+    }
+
+
+
+    .swiper,
+    .title {
+        margin-bottom: 30px;
+    }
+}
+
+@media(min-width:600px) {
+
+    .swiper,
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .chevrons {
+        font-size: 30px;
+    }
+}
+
+@media(min-width:800px) {
+    .title {
+        margin-bottom: 50px;
+    }
+}
+
+@media(min-width:1100px) {
+    .epigrpah {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-20%) translateY(-50%) rotate(270deg);
+        color: var(--color-light-gray);
+    }
+
+    .epigrpah>div {
+        background-color: var(--color-light-gray);
+    }
+
+    .swiper,
+    .title {
+        margin-bottom: 60px;
+    }
+
+    .navPrev {
+        left: 100px;
+    }
+
+    .navNext {
+        right: 100px;
+    }
+
+    .swiperProgressbar {
+        max-width: calc(1000px - 40px);
+    }
+}
